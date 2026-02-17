@@ -1,0 +1,18 @@
+{
+  "name": "@lc-dev-portal/env",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    "./web": "./src/web.ts"
+  },
+  "dependencies": {
+    "@t3-oss/env-nextjs": "^0.13.10",
+    "dotenv": "catalog:",
+    "zod": "catalog:"
+  },
+  "devDependencies": {
+    "@lc-dev-portal/config": "workspace:*",
+    "typescript": "catalog:"
+  }
+}
