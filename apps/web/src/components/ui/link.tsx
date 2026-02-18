@@ -1,8 +1,13 @@
 "use client";
 
-import NextLink from "next/link";
 import type { Route } from "next";
-import * as React from "react";
+import NextLink, { type LinkProps as NextLinkProps } from "next/link";
+import {
+	type ComponentPropsWithoutRef,
+	type ReactNode,
+	type Ref,
+	useMemo,
+} from "react";
 
 import { cn } from "@/lib/utils";
 
@@ -10,50 +15,66 @@ import { cn } from "@/lib/utils";
  * A global Link component that handles both internal (Next.js Typed Routes)
  * and external links.
  */
-interface LinkProps extends Omit<React.ComponentPropsWithoutRef<typeof NextLink>, "href"> {
-	href: string | Route;
-	children: React.ReactNode;
+interface LinkProps
+	extends Omit<ComponentPropsWithoutRef<typeof NextLink>, "href"> {
+	href: string | NextLinkProps<Route>["href"];
+	children: ReactNode;
 	className?: string;
 	isExternal?: boolean;
+	ref?: Ref<HTMLAnchorElement>;
 }
 
-
-
-const Link = React.forwardRef<HTMLAnchorElement, LinkProps>(
-	({ href, isExternal, className, children, ...props }, ref) => {
-		const strHref = typeof href === "string" ? href : (href as any).toString();
-
-		const isExternalUrl = isExternal || strHref.startsWith("http") || strHref.startsWith("//") || strHref.startsWith("mailto:") || strHref.startsWith("tel:");
-
-		if (isExternalUrl) {
-			return (
-				<a
-					className={cn(className)}
-					href={strHref}
-					ref={ref}
-					rel="noopener noreferrer"
-					target="_blank"
-					{...props}
-				>
-					{children}
-				</a>
-			);
+const Link = ({
+	href,
+	isExternal,
+	className,
+	children,
+	ref,
+	...props
+}: LinkProps) => {
+	const strHref = useMemo(() => {
+		if (typeof href === "string") {
+			return href;
 		}
+		if (href && typeof href === "object") {
+			return href.pathname || "";
+		}
+		return "";
+	}, [href]);
 
+	const isExternalUrl =
+		isExternal ||
+		strHref.startsWith("http") ||
+		strHref.startsWith("//") ||
+		strHref.startsWith("mailto:") ||
+		strHref.startsWith("tel:");
+
+	if (isExternalUrl) {
 		return (
-			<NextLink
+			<a
 				className={cn(className)}
-				href={href as Route}
+				href={strHref}
 				ref={ref}
+				rel="noopener noreferrer"
+				target="_blank"
 				{...props}
 			>
 				{children}
-			</NextLink>
+			</a>
 		);
 	}
-);
 
-Link.displayName = "Link";
+	return (
+		<NextLink
+			className={cn(className)}
+			href={href as Route}
+			ref={ref}
+			{...props}
+		>
+			{children}
+		</NextLink>
+	);
+};
 
 export { Link };
 export type { LinkProps };
