@@ -16,7 +16,7 @@ export default function SocialLinks() {
 			{SOCIALS.map((social) => (
 				<Link
 					aria-label={social.label}
-					className="block text-content-slate-light transition-colors hover:text-brand-primary"
+					className="block text-content-slate-strong transition-colors hover:text-brand-secondary"
 					href={social.href}
 					key={social.label}
 				>

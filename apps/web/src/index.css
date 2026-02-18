@@ -28,6 +28,8 @@
 	--brand-secondary: #dd00ac;
 	--brand-dark: #14152c;
 	--brand-light: #ccceef;
+	--accent-purple: #9333ea;
+	--accent-blue: #3b82f6;
 
 	/* Background */
 	--background-default: #f7f8fd;
@@ -95,6 +97,8 @@
 	--brand-secondary: #dd00ac;
 	--brand-dark: #14152c;
 	--brand-light: #ccceef;
+	--accent-purple: #a855f7;
+	--accent-blue: #60a5fa;
 
 	/* Background */
 	--background-default: #090914;
@@ -153,6 +157,8 @@
 	--color-brand-secondary: var(--brand-secondary);
 	--color-brand-dark: var(--brand-dark);
 	--color-brand-light: var(--brand-light);
+	--color-accent-purple: var(--accent-purple);
+	--color-accent-blue: var(--accent-blue);
 
 	--color-background-default: var(--background-default);
 

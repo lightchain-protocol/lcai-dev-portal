@@ -4,6 +4,7 @@ import { Inter } from "next/font/google";
 import "../index.css";
 import Header from "@/components/header";
 import Providers from "@/components/providers";
+import TopBar from "@/components/top-bar";
 
 const inter = Inter({
 	subsets: ["latin"],
@@ -25,6 +26,7 @@ export default function RootLayout({
 		<html className={inter.variable} lang="en" suppressHydrationWarning>
 			<body className="select-none font-sans antialiased">
 				<Providers>
+					<TopBar />
 					<div className="grid h-svh grid-rows-[auto_1fr]">
 						<Header />
 						<main className="overflow-y-auto">{children}</main>
