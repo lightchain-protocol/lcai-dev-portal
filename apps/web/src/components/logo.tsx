@@ -4,9 +4,13 @@ import Image from "next/image";
 export default function Logo() {
 	return (
 		<Link className="group flex items-center gap-2" href="/">
-			<div className="flex items-center gap-2">
-				<Image src="/images/logo.png" alt="Logo" width={200} height={39} />
-			</div>
+			<Image
+				alt="LightchainAI Logo"
+				height={39}
+				priority
+				src="/images/logo.png"
+				width={200}
+			/>
 		</Link>
 	);
 }
