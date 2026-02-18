@@ -1,24 +1,19 @@
 import type { Metadata } from "next";
-
-import { Geist, Geist_Mono } from "next/font/google";
+import { Inter } from "next/font/google";
 
 import "../index.css";
 import Header from "@/components/header";
 import Providers from "@/components/providers";
 
-const geistSans = Geist({
-	variable: "--font-geist-sans",
+const inter = Inter({
 	subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-	variable: "--font-geist-mono",
-	subsets: ["latin"],
+	variable: "--font-inter",
 });
 
 export const metadata: Metadata = {
-	title: "lc-dev-portal",
-	description: "lc-dev-portal",
+	title: "Lightchain AI | Developer Portal",
+	description:
+		"Advanced developer tools and documentation for the Lightchain Protocol.",
 };
 
 export default function RootLayout({
@@ -27,14 +22,12 @@ export default function RootLayout({
 	children: React.ReactNode;
 }>) {
 	return (
-		<html lang="en" suppressHydrationWarning>
-			<body
-				className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-			>
+		<html className={inter.variable} lang="en" suppressHydrationWarning>
+			<body className="select-none font-sans antialiased">
 				<Providers>
 					<div className="grid h-svh grid-rows-[auto_1fr]">
 						<Header />
-						{children}
+						<main className="overflow-y-auto">{children}</main>
 					</div>
 				</Providers>
 			</body>
