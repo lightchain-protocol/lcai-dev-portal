@@ -261,38 +261,56 @@
 	}
 
 	h1 {
-		@apply text-h1 leading-h1 font-semibold;
+		font-size: var(--font-size-h1);
+		line-height: var(--line-height-h1);
+		font-weight: var(--font-weight-semibold);
 	}
 	h2 {
-		@apply text-h2 leading-h2 font-semibold;
+		font-size: var(--font-size-h2);
+		line-height: var(--line-height-h2);
+		font-weight: var(--font-weight-semibold);
 	}
 	h3 {
-		@apply text-h3 leading-h3 font-semibold;
+		font-size: var(--font-size-h3);
+		line-height: var(--line-height-h3);
+		font-weight: var(--font-weight-semibold);
 	}
 	h4 {
-		@apply text-h4 leading-h4 font-medium;
+		font-size: var(--font-size-h4);
+		line-height: var(--line-height-h4);
+		font-weight: var(--font-weight-medium);
 	}
 	h5 {
-		@apply text-h5 leading-h5 font-medium;
+		font-size: var(--font-size-h5);
+		line-height: var(--line-height-h5);
+		font-weight: var(--font-weight-medium);
 	}
 
 	/* Semantic text components */
 	.text-hero {
-		@apply text-hero leading-hero font-bold;
+		font-size: var(--font-size-hero);
+		line-height: var(--line-height-hero);
+		font-weight: var(--font-weight-bold);
 	}
 	.text-body-l {
-		@apply text-body-l leading-body-l;
+		font-size: var(--font-size-body-l);
+		line-height: var(--line-height-body-l);
 	}
 	.text-body-m {
-		@apply text-body-m leading-body-m;
+		font-size: var(--font-size-body-m);
+		line-height: var(--line-height-body-m);
 	}
 	.text-body-s {
-		@apply text-body-s leading-body-s;
+		font-size: var(--font-size-body-s);
+		line-height: var(--line-height-body-s);
 	}
 	.text-caption {
-		@apply text-caption leading-caption;
+		font-size: var(--font-size-caption);
+		line-height: var(--line-height-caption);
 	}
 	.text-button-label {
-		@apply text-button-label leading-button-label font-semibold;
+		font-size: var(--font-size-button-label);
+		line-height: var(--line-height-button-label);
+		font-weight: var(--font-weight-semibold);
 	}
 }
