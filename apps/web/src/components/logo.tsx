@@ -1,5 +1,5 @@
-import { Link } from "@/components/ui/link";
 import Image from "next/image";
+import { Link } from "@/components/ui/link";
 
 export default function Logo() {
 	return (
