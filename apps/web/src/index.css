@@ -6,31 +6,31 @@
 
 :root {
 	/* Content Slate */
-	--content-slate-strong: #14152C;
-	--content-slate-medium: #393A53;
+	--content-slate-strong: #14152c;
+	--content-slate-medium: #393a53;
 	--content-slate-soft: #545670;
-	--content-slate-light: #70728E;
+	--content-slate-light: #70728e;
 
 	/* Surface Slate */
-	--surface-slate-strong: #FFFFFF;
-	--surface-slate-medium: #F7F8FD;
-	--surface-slate-soft: #F2F3FB;
-	--surface-slate-light: #EEF0FA;
+	--surface-slate-strong: #ffffff;
+	--surface-slate-medium: #f7f8fd;
+	--surface-slate-soft: #f2f3fb;
+	--surface-slate-light: #eef0fa;
 
 	/* Border Slate */
-	--border-slate-strong: #E6E7F7;
-	--border-slate-medium: #E2E3F6;
-	--border-slate-soft: #EEF0FA;
-	--border-slate-light: #F2F3FB;
+	--border-slate-strong: #e6e7f7;
+	--border-slate-medium: #e2e3f6;
+	--border-slate-soft: #eef0fa;
+	--border-slate-light: #f2f3fb;
 
 	/* Brand */
-	--brand-primary: #5B4BFF;
-	--brand-secondary: #DD00AC;
-	--brand-dark: #14152C;
-	--brand-light: #CCCEEF;
+	--brand-primary: #5b4bff;
+	--brand-secondary: #dd00ac;
+	--brand-dark: #14152c;
+	--brand-light: #ccceef;
 
 	/* Background */
-	--background-default: #F7F8FD;
+	--background-default: #f7f8fd;
 
 	/* Shadcn UI Base Mapping */
 	--background: var(--background-default);
@@ -40,9 +40,9 @@
 	--popover: var(--surface-slate-medium);
 	--popover-foreground: var(--content-slate-strong);
 	--primary: var(--brand-primary);
-	--primary-foreground: #FFFFFF;
+	--primary-foreground: #ffffff;
 	--secondary: var(--brand-secondary);
-	--secondary-foreground: #FFFFFF;
+	--secondary-foreground: #ffffff;
 	--muted: var(--surface-slate-soft);
 	--muted-foreground: var(--content-slate-medium);
 	--accent: var(--surface-slate-light);
@@ -73,28 +73,28 @@
 
 .dark {
 	/* Content Slate */
-	--content-slate-strong: #FFFFFF;
-	--content-slate-medium: #CCCEEF;
-	--content-slate-soft: #AFB0CE;
-	--content-slate-light: #9B9DB8;
+	--content-slate-strong: #ffffff;
+	--content-slate-medium: #ccceef;
+	--content-slate-soft: #afb0ce;
+	--content-slate-light: #9b9db8;
 
 	/* Surface Slate */
-	--surface-slate-strong: #0C0D1B;
-	--surface-slate-medium: #0E0E1F;
-	--surface-slate-soft: #14152C;
-	--surface-slate-light: #171E2E;
+	--surface-slate-strong: #0c0d1b;
+	--surface-slate-medium: #0e0e1f;
+	--surface-slate-soft: #14152c;
+	--surface-slate-light: #171e2e;
 
 	/* Border Slate */
-	--border-slate-strong: #171E2E;
-	--border-slate-medium: #23243B;
-	--border-slate-soft: #2F314D;
-	--border-slate-light: #3D3F5D;
+	--border-slate-strong: #171e2e;
+	--border-slate-medium: #23243b;
+	--border-slate-soft: #2f314d;
+	--border-slate-light: #3d3f5d;
 
 	/* Brand */
-	--brand-primary: #5B4BFF;
-	--brand-secondary: #DD00AC;
-	--brand-dark: #14152C;
-	--brand-light: #CCCEEF;
+	--brand-primary: #5b4bff;
+	--brand-secondary: #dd00ac;
+	--brand-dark: #14152c;
+	--brand-light: #ccceef;
 
 	/* Background */
 	--background-default: #090914;
@@ -107,9 +107,9 @@
 	--popover: var(--surface-slate-medium);
 	--popover-foreground: var(--content-slate-strong);
 	--primary: var(--brand-primary);
-	--primary-foreground: #FFFFFF;
+	--primary-foreground: #ffffff;
 	--secondary: var(--brand-secondary);
-	--secondary-foreground: #FFFFFF;
+	--secondary-foreground: #ffffff;
 	--muted: var(--surface-slate-soft);
 	--muted-foreground: var(--content-slate-medium);
 	--accent: var(--surface-slate-light);
