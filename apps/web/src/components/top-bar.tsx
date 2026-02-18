@@ -11,7 +11,7 @@ export default function TopBar() {
 				backgroundPosition: "center",
 			}}
 		>
-			<p className="relative z-10 font-medium text-body-s text-content-slate-medium">
+			<p className="type-body-s relative z-10 font-medium text-content-slate-medium">
 				🏟️ BUIDL where legends play. Join our LightchainAI at Parc des Princes,
 				Paris – July 2025 •
 				<Link

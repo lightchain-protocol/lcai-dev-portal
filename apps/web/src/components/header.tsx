@@ -5,8 +5,8 @@ import { Button } from "./ui/button";
 
 export default function Header() {
 	return (
-		<header className="sticky top-0 z-50 w-full border-white/5 border-b bg-background-default/80 backdrop-blur-xl">
-			<div className="flex h-20 items-center justify-between px-12.5">
+		<header className="sticky top-0 z-50 w-full">
+			<div className="flex h-23 items-center justify-between px-12.5">
 				{/* Left: Logo */}
 				<Logo />
 

@@ -21,7 +21,7 @@ export default function NavMenu() {
 			{NAV_ITEMS.map((item) => (
 				<Link
 					className={cn(
-						"flex items-center gap-1 font-medium text-body-m transition-colors hover:text-brand-secondary",
+						"type-body-m flex items-center gap-1 font-medium transition-colors hover:text-brand-secondary",
 						pathname === item.href
 							? "text-brand-secondary"
 							: "text-content-slate-strong"

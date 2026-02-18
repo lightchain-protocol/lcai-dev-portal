@@ -293,28 +293,28 @@
 	}
 
 	/* Semantic text components */
-	.text-hero {
+	.type-hero {
 		font-size: var(--font-size-hero);
 		line-height: var(--line-height-hero);
 		font-weight: var(--font-weight-bold);
 	}
-	.text-body-l {
+	.type-body-l {
 		font-size: var(--font-size-body-l);
 		line-height: var(--line-height-body-l);
 	}
-	.text-body-m {
+	.type-body-m {
 		font-size: var(--font-size-body-m);
 		line-height: var(--line-height-body-m);
 	}
-	.text-body-s {
+	.type-body-s {
 		font-size: var(--font-size-body-s);
 		line-height: var(--line-height-body-s);
 	}
-	.text-caption {
+	.type-caption {
 		font-size: var(--font-size-caption);
 		line-height: var(--line-height-caption);
 	}
-	.text-button-label {
+	.type-button-label {
 		font-size: var(--font-size-button-label);
 		line-height: var(--line-height-button-label);
 		font-weight: var(--font-weight-semibold);
