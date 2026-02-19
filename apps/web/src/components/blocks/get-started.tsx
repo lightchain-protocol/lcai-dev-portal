@@ -29,7 +29,7 @@ export default function GetStartedSection() {
 					Add LightChain to your wallet and deploy your first contract or AI
 					workload in minutes.
 				</p>
-				<Divider className="mx-auto pt-3 pb-4" />
+				<Divider className="mx-auto mt-3 mb-4" />
 
 				<div className="grid w-full grid-cols-2 gap-4 pt-4">
 					{/* ── LEFT: Network Specs ── */}
@@ -98,15 +98,15 @@ export default function GetStartedSection() {
 					</div>
 
 					{/* ── RIGHT: Deployment Guides ── */}
-					<div className="flex flex-col gap-4 rounded-3xl bg-surface-slate-strong p-6">
+					<div className="rounded-3xl bg-surface-slate-strong p-6">
 						<h4 className="mb-1.5 font-medium text-white">Deployment Guides</h4>
-						<p className="type-body-s m-0 text-content-slate-medium">
+						<p className="type-body-s text-content-slate-medium max-w-[365px]">
 							Choose your preferred development environment and deploy in
 							minutes.
 						</p>
 
 						{/* Tool cards */}
-						<div className="grid grid-cols-1 gap-2.5 sm:grid-cols-3">
+						<div className="grid grid-cols-1 gap-2.5 sm:grid-cols-3 mt-6">
 							<ToolCard
 								desc="Browser IDE to deploy fast, no local setup."
 								icon={<RemixIcon />}
