@@ -257,7 +257,8 @@
 		letter-spacing: var(--letter-spacing-tight);
 	}
 	body {
-		@apply font-sans bg-background text-foreground;
+		@apply font-sans text-foreground;
+		background-color: #06060e;
 		font-size: var(--font-size-body-m);
 		line-height: var(--line-height-body-m);
 		font-weight: var(--font-weight-regular);
@@ -318,5 +319,18 @@
 		font-size: var(--font-size-button-label);
 		line-height: var(--line-height-button-label);
 		font-weight: var(--font-weight-semibold);
+	}
+}
+
+@layer utilities {
+	.container {
+		width: 100%;
+		margin-inline: auto;
+	}
+
+	@media (min-width: 96rem) {
+		.container {
+			max-width: 1300px;
+		}
 	}
 }
