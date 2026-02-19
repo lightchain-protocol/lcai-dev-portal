@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { ChevronRightIcon, CopyIcon } from "lucide-react";
+import { toast } from "sonner";
 import Foundry from "@/components/icons/foundry";
 import HardhatIcon from "@/components/icons/hardhat";
 import RemixIcon from "@/components/icons/remix";
@@ -184,6 +185,11 @@ function MainnetSpecs() {
 }
 
 function Field({ label, value, fullWidth }: FieldProps) {
+	const handleCopy = () => {
+		navigator.clipboard.writeText(value);
+		toast.success(`${label} copied to clipboard`);
+	};
+
 	return (
 		<div className={cn(fullWidth && "col-span-full")}>
 			<p className="mb-1 font-medium text-[0.75rem] text-white/40 uppercase tracking-wider">
@@ -195,6 +201,7 @@ function Field({ label, value, fullWidth }: FieldProps) {
 				</span>
 				<button
 					className="shrink-0 cursor-pointer p-0 text-[0.85rem] text-white/35 transition-colors hover:text-white"
+					onClick={handleCopy}
 					title="Copy"
 					type="button"
 				>
