@@ -1,7 +1,7 @@
+import { Button } from "../ui/button";
 import Logo from "./logo";
 import NavMenu from "./nav-menu";
 import SocialLinks from "./social-links";
-import { Button } from "./ui/button";
 
 export default function Header() {
 	return (
