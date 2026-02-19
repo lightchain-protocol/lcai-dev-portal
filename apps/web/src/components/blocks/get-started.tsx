@@ -1,3 +1,6 @@
+"use client";
+
+import { useState } from "react";
 import { ChevronRightIcon, CopyIcon } from "lucide-react";
 import Foundry from "@/components/icons/foundry";
 import HardhatIcon from "@/components/icons/hardhat";
@@ -32,58 +35,11 @@ export default function GetStartedSection() {
 				<Divider className="mx-auto mt-3 mb-4" />
 
 				<div className="grid w-full grid-cols-2 gap-4 pt-4">
-					{/* ── LEFT: Network Specs ── */}
 					<div className="flex flex-col gap-6 rounded-3xl bg-surface-slate-strong p-6">
-						{/* Title + tabs */}
-						<div className="flex items-center justify-between">
-							<h3 className="m-0 font-bold text-white text-xl">
-								Network Specs
-							</h3>
-
-							{/* Tab pills */}
-							<div className="flex overflow-hidden rounded-lg border border-brand-primary/30">
-								{/* Active tab */}
-								<span className="cursor-pointer bg-linear-to-r from-[#7064E9] to-[#FF12FB] px-4 py-1.5 font-semibold text-[0.85rem] text-white">
-									Testnet
-								</span>
-								{/* Inactive tab */}
-								<span className="cursor-pointer bg-transparent px-4 py-1.5 font-medium text-[0.85rem] text-white/50">
-									Mainnet
-								</span>
-							</div>
-						</div>
-
-						{/* Divider */}
-						<hr className="m-0 border-white/8 border-t" />
-
-						{/* Fields grid */}
-						<div className="grid grid-cols-1 gap-x-4 gap-y-5 sm:grid-cols-2">
-							<Field label="Chain ID" value="[TBD]" />
-							<Field
-								label="RPC URL"
-								value="https://testnet-rpc.lightchain.io"
-							/>
-							<Field label="Currency / Gas Token" value="LCAI" />
-							<Field
-								label="Explorer URL"
-								value="https://testnet-explorer.lightchain.io"
-							/>
-							<Field
-								fullWidth
-								label="Faucet"
-								value="https://faucet.lightchain.io"
-							/>
-						</div>
-
-						{/* Buttons */}
-						<div className="mt-1 flex flex-wrap gap-3">
-							<Button className="flex-1" variant="gradient">
-								Add Network to Wallet
-							</Button>
-							<Button className="flex-1" variant="outline">
-								Get Testnet Tokens
-							</Button>
-						</div>
+						<Switcher
+							buttons={["testnet", "mainnet"]}
+							contents={[<TestnetSpecs key="testnet" />, <MainnetSpecs key="mainnet" />]}
+						/>
 
 						<p className="m-0 text-[0.8rem] text-white/40">
 							Having trouble connecting?{" "}
@@ -98,7 +54,7 @@ export default function GetStartedSection() {
 					</div>
 
 					{/* ── RIGHT: Deployment Guides ── */}
-					<div className="rounded-3xl bg-surface-slate-strong p-6">
+					<div className="flex flex-col rounded-3xl bg-surface-slate-strong p-6">
 						<h4 className="mb-1.5 font-medium text-white">Deployment Guides</h4>
 						<p className="type-body-s text-content-slate-medium max-w-[365px]">
 							Choose your preferred development environment and deploy in
@@ -132,6 +88,98 @@ export default function GetStartedSection() {
 				</div>
 			</div>
 		</section>
+	);
+}
+
+function Switcher({
+	buttons,
+	contents,
+}: {
+	buttons: string[];
+	contents: React.ReactNode[];
+}) {
+	const [activeIndex, setActiveIndex] = useState(0);
+
+	return (
+		<div className="flex flex-col gap-6">
+			<div className="flex items-center justify-between">
+				<h4 className="mb-1.5 font-medium text-white">Network Specs</h4>
+				<div className="relative flex h-[36px] w-[180px] items-center rounded-[12px] bg-[#171E2E] p-1">
+					<div
+						className="absolute top-1 bottom-1 left-1 w-[calc(50%-4px)] rounded-[12px] bg-[#5B4BFF] transition-all duration-300 ease-in-out"
+						style={{
+							transform: `translateX(${activeIndex * 100}%)`,
+						}}
+					/>
+					{buttons.map((label, idx) => (
+						<button
+							key={label}
+							className={cn(
+								"relative z-10 flex-1 cursor-pointer rounded-[12px] px-3 py-1.5 font-semibold type-body-s transition-colors capitalize",
+								activeIndex === idx ? "text-white" : "text-white/50"
+							)}
+							onClick={() => setActiveIndex(idx)}
+							type="button"
+						>
+							{label}
+						</button>
+					))}
+				</div>
+			</div>
+			{contents[activeIndex]}
+		</div>
+	);
+}
+
+function TestnetSpecs() {
+	return (
+		<>
+			<div className="grid grid-cols-1 gap-x-4 gap-y-5 sm:grid-cols-2">
+				<Field label="Chain ID" value="[TBD]" />
+				<Field label="RPC URL" value="https://testnet-rpc.lightchain.io" />
+				<Field label="Currency / Gas Token" value="LCAI" />
+				<Field
+					label="Explorer URL"
+					value="https://testnet-explorer.lightchain.io"
+				/>
+				<Field
+					fullWidth
+					label="Faucet"
+					value="https://faucet.lightchain.io"
+				/>
+			</div>
+
+			<div className="mt-1 flex flex-wrap gap-3">
+				<Button className="flex-1" variant="gradient">
+					Add Network to Wallet
+				</Button>
+				<Button className="flex-1" variant="outline">
+					Get Testnet Tokens
+				</Button>
+			</div>
+		</>
+	);
+}
+
+function MainnetSpecs() {
+	return (
+		<>
+			<div className="grid grid-cols-1 gap-x-4 gap-y-5 sm:grid-cols-2">
+				<Field label="Chain ID" value="[TBD]" />
+				<Field label="RPC URL" value="https://rpc.lightchain.io" />
+				<Field label="Currency / Gas Token" value="LCAI" />
+				<Field label="Explorer URL" value="https://explorer.lightchain.io" />
+			</div>
+
+			<div className="mt-1 flex flex-wrap gap-3">
+				<Button className="flex-1" variant="gradient">
+					Add Network to Wallet
+				</Button>
+				<Button className="flex-1" variant="outline">
+					Buy LCAI
+				</Button>
+			</div>
+		</>
 	);
 }
 
