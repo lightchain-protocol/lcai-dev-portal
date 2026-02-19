@@ -13,7 +13,7 @@ import Divider from "../ui/divider";
 interface FieldProps {
 	label: string;
 	value: string;
-	fullWidth?: boolean;
+	className?: string;
 }
 
 interface ToolCardProps {
@@ -36,13 +36,13 @@ export default function GetStartedSection() {
 				<Divider className="mx-auto mt-3 mb-4" />
 
 				<div className="grid w-full grid-cols-2 gap-4 pt-4">
-					<div className="flex flex-col gap-6 rounded-3xl bg-surface-slate-strong p-6">
+					<div className="rounded-3xl bg-surface-slate-strong p-6">
 						<Switcher
 							buttons={["testnet", "mainnet"]}
 							contents={[<TestnetSpecs key="testnet" />, <MainnetSpecs key="mainnet" />]}
 						/>
 
-						<p className="m-0 text-[0.8rem] text-white/40">
+						<p className="mt-3 type-caption text-content-slate-soft">
 							Having trouble connecting?{" "}
 							<a
 								className="text-brand-primary no-underline hover:underline"
@@ -134,23 +134,27 @@ function Switcher({
 
 function TestnetSpecs() {
 	return (
-		<>
-			<div className="grid grid-cols-1 gap-x-4 gap-y-5 sm:grid-cols-2">
-				<Field label="Chain ID" value="[TBD]" />
-				<Field label="RPC URL" value="https://testnet-rpc.lightchain.io" />
-				<Field label="Currency / Gas Token" value="LCAI" />
+		<div>
+			<div className="flex items-center justify-between py-4 border-b border-border-slate-strong">
+				<Field label="Chain ID" value="[TBD]" className="basis-2/5" />
+				<Field label="RPC URL" value="https://testnet-rpc.lightchain.io" className="flex-1" />
+			</div>
+			<div className="flex items-center justify-between py-4 border-b border-border-slate-strong">
+				<Field label="Currency / Gas Token" value="LCAI" className="basis-2/5" />
 				<Field
 					label="Explorer URL"
 					value="https://testnet-explorer.lightchain.io"
+					className="flex-1"
 				/>
+			</div>
+			<div className="flex items-center justify-between py-4">
 				<Field
-					fullWidth
 					label="Faucet"
 					value="https://faucet.lightchain.io"
 				/>
 			</div>
 
-			<div className="mt-1 flex flex-wrap gap-3">
+			<div className="mt-4 flex flex-wrap gap-4">
 				<Button className="flex-1" variant="gradient">
 					Add Network to Wallet
 				</Button>
@@ -158,16 +162,19 @@ function TestnetSpecs() {
 					Get Testnet Tokens
 				</Button>
 			</div>
-		</>
+		</div>
 	);
 }
 
 function MainnetSpecs() {
 	return (
-		<>
-			<div className="grid grid-cols-1 gap-x-4 gap-y-5 sm:grid-cols-2">
+		<div>
+			<div className="flex items-center justify-between py-4 border-b border-border-slate-strong">
 				<Field label="Chain ID" value="[TBD]" />
 				<Field label="RPC URL" value="https://rpc.lightchain.io" />
+			</div>
+			<div className="flex items-center justify-between py-4 border-b border-border-slate-strong">
+
 				<Field label="Currency / Gas Token" value="LCAI" />
 				<Field label="Explorer URL" value="https://explorer.lightchain.io" />
 			</div>
@@ -180,32 +187,33 @@ function MainnetSpecs() {
 					Buy LCAI
 				</Button>
 			</div>
-		</>
+		</div>
 	);
 }
 
-function Field({ label, value, fullWidth }: FieldProps) {
+function Field({ label, value, className }: FieldProps) {
 	const handleCopy = () => {
 		navigator.clipboard.writeText(value);
 		toast.success(`${label} copied to clipboard`);
 	};
 
 	return (
-		<div className={cn(fullWidth && "col-span-full")}>
-			<p className="mb-1 font-medium text-[0.75rem] text-white/40 uppercase tracking-wider">
+		<div className={className}>
+			<p className="mb-1 type-caption text-content-slate-light">
 				{label}
 			</p>
-			<div className="flex items-center gap-2">
-				<span className="break-all font-medium text-[0.9rem] text-white/85">
+
+			<div className="flex items-center gap-3">
+				<span className="break-all type-body-m text-content-slate-strong">
 					{value}
 				</span>
 				<button
-					className="shrink-0 cursor-pointer p-0 text-[0.85rem] text-white/35 transition-colors hover:text-white"
+					className="shrink-0 cursor-pointer p-0 transition-colors hover:text-white"
 					onClick={handleCopy}
 					title="Copy"
 					type="button"
 				>
-					<CopyIcon size={14} />
+					<CopyIcon size={16} className="text-content-slate-soft" />
 				</button>
 			</div>
 		</div>
