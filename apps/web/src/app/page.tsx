@@ -17,7 +17,7 @@ export default function Home() {
 				width="100%"
 			/>
 			<LightchainFundamentals />
-						<img
+			<img
 				alt="Pattern lines"
 				className="h-auto w-full"
 				height={48}

@@ -46,7 +46,7 @@ export function OnboardingSection() {
 							{/* Vertical Lines */}
 							{[0, 33.33, 66.66, 100].map((left) => (
 								<div
-									className="absolute bottom-0 top-[-15px] w-px"
+									className="absolute top-[-15px] bottom-0 w-px"
 									key={left}
 									style={{
 										left: `${left}%`,
@@ -67,7 +67,7 @@ export function OnboardingSection() {
 								{/* Row 1: Seq Numbers */}
 								<div className="relative col-span-3 flex h-14 items-center">
 									<div
-										className="absolute left-[-30px] right-[-30px] top-0 h-px"
+										className="absolute top-0 right-[-30px] left-[-30px] h-px"
 										style={{
 											background:
 												"linear-gradient(to right, transparent, rgba(255,255,255,0.08) 10%, rgba(255,255,255,0.08) 90%, transparent)",
@@ -83,7 +83,7 @@ export function OnboardingSection() {
 										))}
 									</div>
 									<div
-										className="absolute bottom-0 left-[-30px] right-[-30px] h-px"
+										className="absolute right-[-30px] bottom-0 left-[-30px] h-px"
 										style={{
 											background:
 												"linear-gradient(to right, transparent, rgba(255,255,255,0.08) 10%, rgba(255,255,255,0.08) 90%, transparent)",
@@ -111,7 +111,7 @@ export function OnboardingSection() {
 								{/* Row 3: Buttons */}
 								<div className="relative col-span-3 flex items-center">
 									<div
-										className="absolute left-[-30px] right-[-30px] top-0 h-px"
+										className="absolute top-0 right-[-30px] left-[-30px] h-px"
 										style={{
 											background:
 												"linear-gradient(to right, transparent, rgba(255,255,255,0.08) 10%, rgba(255,255,255,0.08) 90%, transparent)",
@@ -149,7 +149,7 @@ export function OnboardingSection() {
 										))}
 									</div>
 									<div
-										className="absolute bottom-0 left-[-30px] right-[-30px] h-px"
+										className="absolute right-[-30px] bottom-0 left-[-30px] h-px"
 										style={{
 											background:
 												"linear-gradient(to right, transparent, rgba(255,255,255,0.08) 10%, rgba(255,255,255,0.08) 90%, transparent)",

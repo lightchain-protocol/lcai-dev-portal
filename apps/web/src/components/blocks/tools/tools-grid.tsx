@@ -49,11 +49,11 @@ export function ToolsGrid() {
 	return (
 		<div className="relative mx-auto w-full max-w-5xl px-4">
 			{/* Vertical Dotted Lines (2 lines for 3 columns) */}
-			<div className="pointer-events-none absolute inset-y-0 left-1/3 hidden w-px border-l border-dashed border-white/10 lg:block" />
-			<div className="pointer-events-none absolute inset-y-0 left-2/3 hidden w-px border-l border-dashed border-white/10 lg:block" />
+			<div className="pointer-events-none absolute inset-y-0 left-1/3 hidden w-px border-white/10 border-l border-dashed lg:block" />
+			<div className="pointer-events-none absolute inset-y-0 left-2/3 hidden w-px border-white/10 border-l border-dashed lg:block" />
 
 			{/* Horizontal Dotted Line (between rows) */}
-			<div className="pointer-events-none absolute inset-x-0 top-1/2 hidden h-px border-t border-dashed border-white/10 lg:block" />
+			<div className="pointer-events-none absolute inset-x-0 top-1/2 hidden h-px border-white/10 border-t border-dashed lg:block" />
 
 			{/* Grid Content */}
 			<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
@@ -64,4 +64,3 @@ export function ToolsGrid() {
 		</div>
 	);
 }
-
