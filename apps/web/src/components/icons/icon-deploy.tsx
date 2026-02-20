@@ -23,8 +23,8 @@ export default function IconDeploy({ className }: { className?: string }) {
 					y1="7.00299"
 					y2="12.0564"
 				>
-					<stop stop-color="#5B4BFF" />
-					<stop offset="1" stop-color="#EE11FB" />
+					<stop stopColor="#5B4BFF" />
+					<stop offset="1" stopColor="#EE11FB" />
 				</linearGradient>
 			</defs>
 		</svg>

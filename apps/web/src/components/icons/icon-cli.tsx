@@ -13,16 +13,16 @@ export default function IconCli({ className }: { className?: string }) {
 			<path
 				d="M5.33301 22.6667L13.333 14.6667L5.33301 6.66675"
 				stroke="#5B4BFF"
-				stroke-linecap="round"
-				stroke-linejoin="round"
-				stroke-width="2.66667"
+				strokeLinecap="round"
+				strokeLinejoin="round"
+				strokeWidth="2.66667"
 			/>
 			<path
 				d="M16 25.3333H26.6667"
 				stroke="#5B4BFF"
-				stroke-linecap="round"
-				stroke-linejoin="round"
-				stroke-width="2.66667"
+				strokeLinecap="round"
+				strokeLinejoin="round"
+				strokeWidth="2.66667"
 			/>
 		</svg>
 	);

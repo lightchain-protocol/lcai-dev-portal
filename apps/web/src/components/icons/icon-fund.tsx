@@ -23,8 +23,8 @@ export default function IconFund({ className }: { className?: string }) {
 					y1="5.6915"
 					y2="11.085"
 				>
-					<stop stop-color="#5B4BFF" />
-					<stop offset="1" stop-color="#EE11FB" />
+					<stop stopColor="#5B4BFF" />
+					<stop offset="1" stopColor="#EE11FB" />
 				</linearGradient>
 			</defs>
 		</svg>

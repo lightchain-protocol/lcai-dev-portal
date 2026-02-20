@@ -13,16 +13,16 @@ export default function IconSdks({ className }: { className?: string }) {
 			<path
 				d="M21.333 24L29.333 16L21.333 8"
 				stroke="#5B4BFF"
-				stroke-linecap="round"
-				stroke-linejoin="round"
-				stroke-width="2.66667"
+				strokeLinecap="round"
+				strokeLinejoin="round"
+				strokeWidth="2.66667"
 			/>
 			<path
 				d="M10.667 8L2.66699 16L10.667 24"
 				stroke="#5B4BFF"
-				stroke-linecap="round"
-				stroke-linejoin="round"
-				stroke-width="2.66667"
+				strokeLinecap="round"
+				strokeLinejoin="round"
+				strokeWidth="2.66667"
 			/>
 		</svg>
 	);

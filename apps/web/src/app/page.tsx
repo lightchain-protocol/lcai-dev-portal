@@ -43,7 +43,14 @@ export default function Home() {
 				width="100%"
 			/>
 			<UpcomingEventSection />
-
+			<img
+				alt="Pattern lines"
+				className="h-auto w-full"
+				height={48}
+				src="/images/pattern-lines.png"
+				width="100%"
+			/>
+			<CommunitySection />
 		</>
 	);
 }
