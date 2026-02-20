@@ -25,27 +25,25 @@ export default function Footer() {
             </div>
         </div>
       
-      <div className="border-t border-[#27272A]">
-        <div className="max-w-6xl mx-auto px-6 py-5 flex items-center justify-between gap-4">
+      <div className="border-t border-[#27272A] py-4 flex items-center justify-between gap-4">
           <div className="flex items-center gap-2.5 text-sm text-[#9F9FA9]">
             <Icon name="logo" size={24}/>
             <span> 2026 Lightchain. All rights reserved.</span>
           </div>
 
           
-          <div className="flex items-center gap-5 text-[#9F9FA9]">
+          <div className="flex items-center gap-5">
             {socials.map(({ label, icon }) => (
               <a
                 key={label}
                 href="#"
                 aria-label={label}
-                className="hover:text-white/80 transition-colors text-lg"
+                className="text-white transition-colors text-lg"
               >
-                {icon}
+                <Icon name={icon} size={24} className="text-white"/>
               </a>
             ))}
           </div>
-        </div>
       </div>
 
     </footer>
@@ -76,9 +74,8 @@ const footerNav = [
 ];
 
 const socials = [
-  { label: "Twitter", icon: "𝕏" },
-  { label: "GitHub", icon: "⌥" },
-  { label: "Discord", icon: "◎" },
-  { label: "YouTube", icon: "▷" },
-  { label: "LinkedIn", icon: "in" },
+  { label: "Twitter", icon: "x-white" },
+  { label: "GitHub", icon: "github-white" },
+  { label: "Discord", icon: "discord-white" },
+  { label: "YouTube", icon: "youtube-white" }
 ];
