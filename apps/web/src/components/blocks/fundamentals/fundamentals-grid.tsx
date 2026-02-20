@@ -1,27 +1,23 @@
-import BrainIcon from "@/components/icons/brain";
-import GovernanceIcon from "@/components/icons/governance";
-import LockIcon from "@/components/icons/lock";
-import ShieldIcon from "@/components/icons/shield";
 import { FundamentalCard } from "./fundamental-card";
 
 const FUNDAMENTALS = [
 	{
-		icon: ShieldIcon,
+		icon: "/icons/shield.svg",
 		title: "Proof of Intelligence",
 		desc: "Consensus mechanism that validates AI computations on-chain.",
 	},
 	{
-		icon: BrainIcon,
+		icon: "/icons/brain.svg",
 		title: "AI Virtual Machine",
 		desc: "Execute and verify AI inference directly on the blockchain.",
 	},
 	{
-		icon: LockIcon,
+		icon: "/icons/lock.svg",
 		title: "Privacy options",
 		desc: "Zero-knowledge proofs and encrypted computation for sensitive workloads.",
 	},
 	{
-		icon: GovernanceIcon,
+		icon: "/icons/governance.svg",
 		title: "On-chain governance",
 		desc: "Community-driven protocol upgrades and parameter adjustments.",
 	},

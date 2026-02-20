@@ -1,6 +1,4 @@
-import BoltIcon from "../icons/bolt";
-import BookOpenIcon from "../icons/book";
-import RocketIcon from "../icons/rocket";
+import { Bolt, Icon, Rocket } from "@/components/shared/icon";
 import { Button } from "../ui/button";
 
 export default function HeroSection() {
@@ -10,7 +8,7 @@ export default function HeroSection() {
 				Build Verifiable
 				<br />
 				<span className="text-brand-primary">AI Apps </span>
-				on <BoltIcon className="inline-block" />{" "}
+				on <Bolt className="inline-block h-[49px] w-[39px]" />{" "}
 				<span className="bg-linear-to-r from-[#7064E9] via-60% to-[#FF12FB] bg-clip-text text-transparent">
 					LightChain
 				</span>
@@ -22,10 +20,10 @@ export default function HeroSection() {
 			</p>
 			<div className="mt-2 flex flex-wrap items-center justify-center gap-3">
 				<Button variant="gradient">
-					<RocketIcon /> Start on Testnet
+					<Rocket size={20} /> Start on Testnet
 				</Button>
 				<Button variant="outline">
-					<BookOpenIcon /> Read Docs
+					<Icon name="book" size={20} /> Read Docs
 				</Button>
 			</div>
 		</section>

@@ -1,44 +1,38 @@
-import IconCli from "@/components/icons/icon-cli";
-import IconExplorer from "@/components/icons/icon-explorer";
-import IconFaucetTools from "@/components/icons/icon-faucet-tools";
-import IconGovernanceTools from "@/components/icons/icon-governance-tools";
-import IconRpc from "@/components/icons/icon-rpc";
-import IconSdks from "@/components/icons/icon-sdks";
 import { ToolCard } from "./tool-card";
 
 const TOOLS = [
 	{
-		icon: IconCli,
+		icon: "/icons/icon-cli.svg",
 		title: "Lightchain CLI",
 		desc: "Command-line interface for deploying contracts, managing networks, and running AI workloads.",
 		cta: "Install CLI",
 	},
 	{
-		icon: IconSdks,
+		icon: "/icons/icon-sdks.svg",
 		title: "SDKs",
 		desc: "Client libraries for JavaScript, Python, Rust, and Go to interact with Lightchain.",
 		cta: "Browse SDKs",
 	},
 	{
-		icon: IconRpc,
+		icon: "/icons/icon-rpc.svg",
 		title: "RPC and JSON-RPC",
 		desc: "Ethereum-compatible RPC endpoints for reading and writing blockchain data.",
 		cta: "RPC docs",
 	},
 	{
-		icon: IconGovernanceTools,
+		icon: "/icons/icon-governance-tools.svg",
 		title: "Governance",
 		desc: "Propose, discuss, and vote on network upgrades, grants, and protocol parameters.",
 		cta: "Open governance",
 	},
 	{
-		icon: IconFaucetTools,
+		icon: "/icons/icon-faucet-tools.svg",
 		title: "Faucet",
 		desc: "Get testnet tokens instantly to start building without needing real funds.",
 		cta: "Get tokens",
 	},
 	{
-		icon: IconExplorer,
+		icon: "/icons/icon-explorer.svg",
 		title: "Explorer",
 		desc: "Browse blocks, transactions, addresses, and AI workloads on the blockchain.",
 		cta: "More Details",

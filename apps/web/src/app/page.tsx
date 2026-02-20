@@ -1,3 +1,4 @@
+import Image from "next/image";
 import CommunitySection from "@/components/blocks/community";
 import UpcomingEventSection from "@/components/blocks/events";
 import LightchainFundamentals from "@/components/blocks/fundamentals";
@@ -11,44 +12,44 @@ export default function Home() {
 		<>
 			<HeroSection />
 			<GetStartedSection />
-			<img
+			<Image
 				alt="Pattern lines"
 				className="h-auto w-full"
 				height={48}
 				src="/images/pattern-lines.png"
-				width="100%"
+				width={1440}
 			/>
 			<LightchainFundamentals />
-			<img
+			<Image
 				alt="Pattern lines"
 				className="h-auto w-full"
 				height={48}
 				src="/images/pattern-lines.png"
-				width="100%"
+				width={1440}
 			/>
 			<ToolsSection />
-			<img
+			<Image
 				alt="Pattern lines"
 				className="h-auto w-full"
 				height={48}
 				src="/images/pattern-lines.png"
-				width="100%"
+				width={1440}
 			/>
 			<SecuritySection />
-			<img
+			<Image
 				alt="Pattern lines"
 				className="h-auto w-full"
 				height={48}
 				src="/images/pattern-lines.png"
-				width="100%"
+				width={1440}
 			/>
 			<UpcomingEventSection />
-			<img
+			<Image
 				alt="Pattern lines"
 				className="h-auto w-full"
 				height={48}
 				src="/images/pattern-lines.png"
-				width="100%"
+				width={1440}
 			/>
 			<CommunitySection />
 		</>

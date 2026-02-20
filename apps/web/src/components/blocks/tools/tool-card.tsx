@@ -1,17 +1,18 @@
+import { Icon } from "@/components/shared/icon";
 import { Button } from "@/components/ui/button";
 
 interface ToolCardProps {
-	icon: React.ComponentType<{ className?: string }>;
+	icon: string;
 	title: string;
 	desc: string;
 	cta: string;
 }
 
-export function ToolCard({ icon: Icon, title, desc, cta }: ToolCardProps) {
+export function ToolCard({ icon, title, desc, cta }: ToolCardProps) {
 	return (
 		<div className="flex flex-col gap-5 px-8 py-10">
 			{/* Icon */}
-			<Icon className="h-8 w-8 text-brand-primary" />
+			<Icon name={icon.replace("/icons/", "").replace(".svg", "")} size={32} />
 
 			{/* Text */}
 			<div className="flex flex-1 flex-col gap-2">

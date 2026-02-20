@@ -31,7 +31,7 @@ export default function UpcomingEventSection() {
 
 					<div className="flex items-center justify-between px-2 py-4">
 						<span className="type-body-m text-white">
-							Crypto Event of the year // July 12 – 18, 2026
+							Crypto Event of the year - July 12 – 18, 2026
 						</span>
 						<Button variant="gradient">
 							Event Details <ArrowRight className="h-4 w-4" />

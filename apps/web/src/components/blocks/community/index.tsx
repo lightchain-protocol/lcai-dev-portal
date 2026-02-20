@@ -1,6 +1,4 @@
-import DiscordIcon from "@/components/icons/discord";
-import GithubIcon from "@/components/icons/github";
-import IconCommunity from "@/components/icons/icon-community";
+import { Icon } from "@/components/shared/icon";
 import CommunityCard from "./community-card";
 import CtaBanner from "./cta-banner";
 
@@ -21,17 +19,21 @@ export default function CommunitySection() {
 
 const communities = [
 	{
-		icon: <DiscordIcon />,
+		icon: (
+			<div className="relative h-[47px] w-[60px]">
+				<Icon name="discord" size={60} />
+			</div>
+		),
 		title: "Discord",
 		text: "Chat live with the community Get support and updates",
 	},
 	{
-		icon: <GithubIcon />,
+		icon: <Icon name="github" size={52} />,
 		title: "GitHub",
 		text: "Explore the source code Report issues and contribute",
 	},
 	{
-		icon: <IconCommunity />,
+		icon: <Icon name="icon-community" size={84} />,
 		title: "Forum",
 		text: "Join technical discussions Share proposals and feedback",
 	},

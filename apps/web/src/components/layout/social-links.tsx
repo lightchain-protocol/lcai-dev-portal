@@ -1,13 +1,22 @@
-import DiscordIcon from "@/components/icons/discord";
-import XIcon from "@/components/icons/x";
-import YoutubeIcon from "@/components/icons/youtube";
-
+import { Icon } from "@/components/shared/icon";
 import { Link } from "@/components/ui/link";
 
 const SOCIALS = [
-	{ icon: XIcon, href: "https://x.com", label: "X (Twitter)" },
-	{ icon: DiscordIcon, href: "https://discord.com", label: "Discord" },
-	{ icon: YoutubeIcon, href: "https://youtube.com", label: "YouTube" },
+	{
+		icon: (className: string) => <Icon className={className} name="x" />,
+		href: "https://x.com",
+		label: "X (Twitter)",
+	},
+	{
+		icon: (className: string) => <Icon className={className} name="discord" />,
+		href: "https://discord.com",
+		label: "Discord",
+	},
+	{
+		icon: (className: string) => <Icon className={className} name="youtube" />,
+		href: "https://youtube.com",
+		label: "YouTube",
+	},
 ];
 
 export default function SocialLinks() {
@@ -20,7 +29,7 @@ export default function SocialLinks() {
 					href={social.href}
 					key={social.label}
 				>
-					<social.icon className="size-5" />
+					{social.icon("size-5")}
 				</Link>
 			))}
 		</div>

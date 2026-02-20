@@ -1,6 +1,4 @@
-import Foundry from "@/components/icons/foundry";
-import HardhatIcon from "@/components/icons/hardhat";
-import RemixIcon from "@/components/icons/remix";
+import { Icon } from "@/components/shared/icon";
 import { Button } from "@/components/ui/button";
 import { ToolCard } from "./tool-card";
 
@@ -16,17 +14,17 @@ export function DeploymentGuides() {
 			<div className="mt-6 grid grid-cols-1 gap-2.5 sm:grid-cols-3">
 				<ToolCard
 					desc="Browser IDE to deploy fast, no local setup."
-					icon={<RemixIcon />}
+					icon={<Icon name="remix" size={20} />}
 					name="Remix"
 				/>
 				<ToolCard
 					desc="Local dev workflow with scripts, tests, and plugins."
-					icon={<HardhatIcon />}
+					icon={<Icon name="hardhat" size={20} />}
 					name="Hardhat"
 				/>
 				<ToolCard
 					desc="High-speed Solidity toolkit for testing, fuzzing, and scripting."
-					icon={<Foundry />}
+					icon={<Icon name="foundry" size={20} />}
 					name="Foundry"
 				/>
 			</div>

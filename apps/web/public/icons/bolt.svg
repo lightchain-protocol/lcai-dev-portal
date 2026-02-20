@@ -1,0 +1,10 @@
+<svg fill="none" height="49" viewBox="0 0 39 49" width="39" xmlns="http://www.w3.org/2000/svg">
+	<title>Bolt Icon</title>
+	<path d="M20.6754 4.11663L21.4158 19.3221C21.4727 20.2048 22.2131 20.9167 23.1243 20.9452L34.1725 21.0876C35.5392 21.0876 36.3365 22.5967 35.5962 23.7072L20.9317 45.7182C19.9921 47.1419 17.771 46.487 17.771 44.7785V29.7439C17.771 28.8042 17.0022 28.0639 16.0341 28.0639H4.24554C2.87876 28.0639 2.05299 26.5832 2.79333 25.4727C6.06792 20.4042 13.3574 9.24208 17.5148 3.23392C18.4544 1.89561 20.59 2.49358 20.6754 4.11663Z" stroke="url(#paint0_linear_57_341)" stroke-width="5"/>
+	<defs>
+		<linearGradient gradientUnits="userSpaceOnUse" id="paint0_linear_57_341" x1="-3.15634" x2="41.8602" y1="7.11704" y2="11.0861">
+			<stop stop-color="#5B4BFF"/>
+			<stop offset="1" stop-color="#EE11FB"/>
+		</linearGradient>
+	</defs>
+</svg>

@@ -1,23 +1,20 @@
-import IconAudits from "@/components/icons/icon-audits";
-import IconBestPractices from "@/components/icons/icon-best-practices";
-import IconBugBounty from "@/components/icons/icon-bug-bounty";
 import { SecurityCard } from "./security-card";
 
 const ITEMS = [
 	{
-		icon: IconBestPractices,
+		icon: "/icons/icon-best-practices.svg",
 		title: "Best Practices",
 		desc: "Follow security guidelines for smart contracts and AI workload deployment.",
 		cta: "Read guidelines",
 	},
 	{
-		icon: IconAudits,
+		icon: "/icons/icon-audits.svg",
 		title: "Audits",
 		desc: "Review third-party security audits of the Lightchain protocol and contracts.",
 		cta: "View audits",
 	},
 	{
-		icon: IconBugBounty,
+		icon: "/icons/icon-bug-bounty.svg",
 		title: "Bug Bounty",
 		desc: "Report vulnerabilities responsibly and earn rewards for valid findings.",
 		cta: "Report bug",

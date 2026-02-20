@@ -1,24 +1,22 @@
-import IconConnect from "@/components/icons/icon-connect";
-import IconDeploy from "@/components/icons/icon-deploy";
-import IconFund from "@/components/icons/icon-fund";
+import { Icon } from "@/components/shared/icon";
 import { Button } from "@/components/ui/button";
 
 const STEPS = [
 	{
 		num: "01",
-		icon: IconConnect,
+		icon: <Icon name="icon-connect" size={40} />,
 		title: "Connect",
 		desc: "Add the Lightchain network to MetaMask or your preferred Web3 wallet.",
 	},
 	{
 		num: "02",
-		icon: IconFund,
+		icon: <Icon name="icon-fund" size={40} />,
 		title: "Fund",
 		desc: "Get testnet LIGHT tokens from the faucet to start deploying.",
 	},
 	{
 		num: "03",
-		icon: IconDeploy,
+		icon: <Icon name="icon-deploy" size={40} />,
 		title: "Deploy",
 		desc: "Choose your path: deploy a smart contract or run an AI workload.",
 	},
@@ -95,7 +93,7 @@ export function OnboardingSection() {
 								<div className="col-span-3 grid grid-cols-3">
 									{STEPS.map((step) => (
 										<div className="flex flex-col gap-6 p-10" key={step.num}>
-											<step.icon className="h-10 w-10" />
+											<div className="h-10 w-10">{step.icon}</div>
 											<div className="flex flex-col gap-2">
 												<h3 className="type-h4 font-bold text-white">
 													{step.title}

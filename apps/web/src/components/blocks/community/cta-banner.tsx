@@ -1,4 +1,4 @@
-import IconLightning from "@/components/icons/icon-lightning";
+import { Icon } from "@/components/shared/icon";
 import { Button } from "@/components/ui/button";
 
 export default function CtaBanner() {
@@ -12,7 +12,9 @@ export default function CtaBanner() {
 				<div className="absolute -top-1/4 left-1/2 h-[80%] w-[80%] -translate-x-1/2 rounded-full bg-[#E017FB] blur-[100px]" />
 			</div>
 
-			<IconLightning className="relative z-30 mx-auto" />
+			<div className="relative z-30 mx-auto flex h-[94px] w-[71px] justify-center">
+				<Icon name="icon-lightning" size={94} />
+			</div>
 
 			<h3 className="relative z-30 my-2 text-content-slate-strong">
 				Building something serious?
