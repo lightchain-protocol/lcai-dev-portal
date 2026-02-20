@@ -1,3 +1,5 @@
+import CommunitySection from "@/components/blocks/community";
+import UpcomingEventSection from "@/components/blocks/events";
 import LightchainFundamentals from "@/components/blocks/fundamentals";
 import GetStartedSection from "@/components/blocks/get-started";
 import HeroSection from "@/components/blocks/hero";
@@ -33,6 +35,15 @@ export default function Home() {
 				width="100%"
 			/>
 			<SecuritySection />
+			<img
+				alt="Pattern lines"
+				className="h-auto w-full"
+				height={48}
+				src="/images/pattern-lines.png"
+				width="100%"
+			/>
+			<UpcomingEventSection />
+
 		</>
 	);
 }
