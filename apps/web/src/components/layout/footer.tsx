@@ -1,0 +1,84 @@
+import { Icon } from "../shared/icon";
+
+export default function Footer() {
+  return (
+    <footer className="bg-surface-slate-strong border-t border-[#27272A] pt-16 px-14 pb-10">
+        <div className="container">
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-10 pb-12">
+                {footerNav.map((col) => (
+                    <div key={col.heading} className="flex flex-col gap-4">
+                        <h4 className="text-base leading-normal font-semibold text-white mb-4">{col.heading}</h4>
+                        <ul className="flex flex-col gap-2.5">
+                            {col.links.map((link) => (
+                                <li key={link} className="not-last:mb-[11px]">
+                                    <a
+                                        href="/"
+                                        className="text-sm text-[#9F9FA9] hover:text-white/80 transition-colors"
+                                    >
+                                        {link}
+                                    </a>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+                ))}
+            </div>
+        </div>
+      
+      <div className="border-t border-[#27272A]">
+        <div className="max-w-6xl mx-auto px-6 py-5 flex items-center justify-between gap-4">
+          <div className="flex items-center gap-2.5 text-sm text-[#9F9FA9]">
+            <Icon name="logo" size={24}/>
+            <span> 2026 Lightchain. All rights reserved.</span>
+          </div>
+
+          
+          <div className="flex items-center gap-5 text-[#9F9FA9]">
+            {socials.map(({ label, icon }) => (
+              <a
+                key={label}
+                href="#"
+                aria-label={label}
+                className="hover:text-white/80 transition-colors text-lg"
+              >
+                {icon}
+              </a>
+            ))}
+          </div>
+        </div>
+      </div>
+
+    </footer>
+  );
+}
+
+const footerNav = [
+  {
+    heading: "Docs",
+    links: ["Core Concepts", "APIs", "SDKs", "Smart Contracts", "CLI Reference"],
+  },
+  {
+    heading: "Build",
+    links: ["Quickstart Guides", "Tutorials", "Starter Kits", "Example Apps", "And Dev Tooling"],
+  },
+  {
+    heading: "Run a Node",
+    links: ["Validator Guide", "Hardware Requirements", "Staking", "Testnet Participation", "Monitoring"],
+  },
+  {
+    heading: "Ecosystem",
+    links: ["Projects, Wallets", "Explorers", "Infrastructure Partners", "Potentially Grants."],
+  },
+  {
+    heading: "Research",
+    links: ["Whitepaper", "Protocol Specs", "Governance", "Roadmap", "Improvement Proposals"],
+  },
+];
+
+const socials = [
+  { label: "Twitter", icon: "𝕏" },
+  { label: "GitHub", icon: "⌥" },
+  { label: "Discord", icon: "◎" },
+  { label: "YouTube", icon: "▷" },
+  { label: "LinkedIn", icon: "in" },
+];

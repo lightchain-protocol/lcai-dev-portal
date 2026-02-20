@@ -4,6 +4,7 @@ import { Inter } from "next/font/google";
 import "../index.css";
 import Header from "@/components/layout/header";
 import Providers from "@/components/shared/providers";
+import Footer from "@/components/layout/footer";
 
 const inter = Inter({
 	subsets: ["latin"],
@@ -28,6 +29,7 @@ export default function RootLayout({
 					<div className="grid h-svh grid-rows-[auto_1fr]">
 						<Header />
 						<main>{children}</main>
+						<Footer/>
 					</div>
 				</Providers>
 			</body>
