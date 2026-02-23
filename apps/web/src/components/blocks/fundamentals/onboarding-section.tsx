@@ -41,29 +41,24 @@ export function OnboardingSection() {
 
 						{/* Grid Area with Custom Lines */}
 						<div className="relative mx-auto mt-4 max-w-[1100px] px-4 pb-12">
-							{/* Vertical Lines */}
-							{[0, 33.33, 66.66, 100].map((left) => (
-								<div
-									className="absolute top-[-15px] bottom-0 w-px"
-									key={left}
-									style={{
-										left: `${left}%`,
-										background:
-											"linear-gradient(to bottom, transparent, rgba(255,255,255,0.08) 15%, rgba(255,255,255,0.08) 85%, transparent)",
-									}}
-								/>
-							))}
+							{/* Vertical Lines - only on desktop */}
+							<div className="hidden lg:block">
+								{[0, 33.33, 66.66, 100].map((left) => (
+									<div
+										className="absolute top-[-15px] bottom-0 w-px"
+										key={left}
+										style={{
+											left: `${left}%`,
+											background:
+												"linear-gradient(to bottom, transparent, rgba(255,255,255,0.08) 15%, rgba(255,255,255,0.08) 85%, transparent)",
+										}}
+									/>
+								))}
+							</div>
 
-							{/* Horizontal Lines */}
-							{/* The heights of rows are dynamic, so we can't easily use absolute for horizontal lines if we want them to cross the vertical ones perfectly across rows. 
-                               Instead, we'll keep the grid structure but use custom border styles or semi-transparent lines.
-                               Wait, the user wants them to cross and fade. 
-                               Let's use a 3x3 grid structure where each row has the horizontal line.
-                            */}
-
-							<div className="grid grid-cols-3">
-								{/* Row 1: Seq Numbers */}
-								<div className="relative col-span-3 flex h-14 items-center">
+							<div className="grid grid-cols-1 lg:grid-cols-3">
+								{/* Row 1: Seq Numbers - Hidden on mobile if redundant with vertical layout, or kept if styled */}
+								<div className="relative col-span-1 lg:col-span-3 lg:flex hidden h-14 items-center">
 									<div
 										className="absolute top-0 right-[-30px] left-[-30px] h-px"
 										style={{
@@ -89,10 +84,17 @@ export function OnboardingSection() {
 									/>
 								</div>
 
-								{/* Row 2: Main Content */}
-								<div className="col-span-3 grid grid-cols-3">
-									{STEPS.map((step) => (
-										<div className="flex flex-col gap-6 p-10" key={step.num}>
+								{/* Main Content Area */}
+								{STEPS.map((step) => (
+									<div key={step.num} className="flex flex-col">
+										{/* step number for mobile */}
+										<div className="block lg:hidden px-4 pt-8">
+											<span className="type-body-s font-semibold text-brand-primary">
+												{step.num}
+											</span>
+										</div>
+										
+										<div className="flex flex-col gap-6 p-6 lg:p-10">
 											<div className="h-10 w-10">{step.icon}</div>
 											<div className="flex flex-col gap-2">
 												<h3 className="type-h4 font-bold text-white">
@@ -103,18 +105,42 @@ export function OnboardingSection() {
 												</p>
 											</div>
 										</div>
-									))}
-								</div>
 
-								{/* Row 3: Buttons */}
-								<div className="relative col-span-3 flex items-center">
-									<div
-										className="absolute top-0 right-[-30px] left-[-30px] h-px"
-										style={{
-											background:
-												"linear-gradient(to right, transparent, rgba(255,255,255,0.08) 10%, rgba(255,255,255,0.08) 90%, transparent)",
-										}}
-									/>
+										<div className="px-6 pb-12 lg:hidden">
+											{step.num === "03" ? (
+												<div className="flex flex-col sm:flex-row gap-3">
+													<Button
+														className="flex-1 border-white/10 bg-white/5 hover:bg-white/10"
+														variant="outline"
+													>
+														Deploy
+													</Button>
+													<Button
+														className="flex-1 border-white/10 bg-white/5 hover:bg-white/10"
+														variant="outline"
+													>
+														Workload
+													</Button>
+												</div>
+											) : (
+												<Button
+													className="w-full border-white/10 bg-white/5 hover:bg-white/10"
+													variant="outline"
+												>
+													{step.num === "01"
+														? "Add to Wallet"
+														: "Visit Faucet"}
+												</Button>
+											)}
+										</div>
+										
+										{/* Divider for mobile */}
+										<div className="lg:hidden h-px bg-white/10 mx-4" />
+									</div>
+								))}
+
+								{/* Row 3: Buttons - Desktop only */}
+								<div className="relative col-span-1 lg:col-span-3 hidden lg:flex items-center">
 									<div className="grid w-full grid-cols-3">
 										{STEPS.map((step) => (
 											<div className="p-8" key={step.num}>

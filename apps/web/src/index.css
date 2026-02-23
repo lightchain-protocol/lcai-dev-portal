@@ -266,6 +266,10 @@
 	html {
 		@apply font-sans;
 	}
+	img {
+		display: block;
+		max-width: 100%;
+	}
 
 	h1, .heading-1 {
 		font-size: var(--font-size-h1);
