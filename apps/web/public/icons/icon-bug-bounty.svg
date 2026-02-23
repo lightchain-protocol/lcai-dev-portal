@@ -1,6 +1,13 @@
-<svg fill="none" height="32" role="img" viewBox="0 0 32 32" width="32" xmlns="http://www.w3.org/2000/svg">
-	<title>Bug Bounty Icon</title>
-	<path d="M28.9732 24L18.3066 5.33331C18.074 4.92291 17.7367 4.58156 17.3291 4.34407C16.9216 4.10657 16.4583 3.98145 15.9866 3.98145C15.5149 3.98145 15.0516 4.10657 14.644 4.34407C14.2364 4.58156 13.8992 4.92291 13.6666 5.33331L2.99991 24C2.76482 24.4071 2.64154 24.8692 2.64258 25.3393C2.64363 25.8095 2.76894 26.271 3.00583 26.6771C3.24273 27.0832 3.58277 27.4194 3.9915 27.6517C4.40023 27.8841 4.86312 28.0042 5.33324 28H26.6666C27.1344 27.9995 27.5939 27.8759 27.9989 27.6417C28.404 27.4074 28.7402 27.0708 28.9739 26.6655C29.2076 26.2602 29.3306 25.8005 29.3305 25.3326C29.3304 24.8648 29.2072 24.4052 28.9732 24Z" stroke="#5B4BFF" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.66667"/>
-	<path d="M16 12V17.3333" stroke="#5B4BFF" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.66667"/>
-	<path d="M16 22.6665H16.0133" stroke="#5B4BFF" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.66667"/>
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M10.667 2.6665L13.1737 5.17317" stroke="#5B4BFF" stroke-width="2.66667" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M18.8271 5.17317L21.3338 2.6665" stroke="#5B4BFF" stroke-width="2.66667" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M12.0001 9.5065V8.17316C11.9759 7.63283 12.0615 7.09319 12.2516 6.58683C12.4417 6.08047 12.7325 5.61787 13.1063 5.22696C13.4801 4.83605 13.9292 4.52493 14.4266 4.31238C14.9239 4.09982 15.4592 3.99023 16.0001 3.99023C16.541 3.99023 17.0762 4.09982 17.5736 4.31238C18.071 4.52493 18.5201 4.83605 18.8939 5.22696C19.2677 5.61787 19.5585 6.08047 19.7486 6.58683C19.9387 7.09319 20.0243 7.63283 20.0001 8.17316V9.5065" stroke="#5B4BFF" stroke-width="2.66667" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M16 26.6668C11.6 26.6668 8 23.0668 8 18.6668V14.6668C8 13.2523 8.5619 11.8958 9.5621 10.8956C10.5623 9.8954 11.9188 9.3335 13.3333 9.3335H18.6667C20.0812 9.3335 21.4377 9.8954 22.4379 10.8956C23.4381 11.8958 24 13.2523 24 14.6668V18.6668C24 23.0668 20.4 26.6668 16 26.6668Z" stroke="#5B4BFF" stroke-width="2.66667" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M16 26.6665V14.6665" stroke="#5B4BFF" stroke-width="2.66667" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M8.70667 11.9998C6.13333 11.7332 4 9.4665 4 6.6665" stroke="#5B4BFF" stroke-width="2.66667" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M8.00033 17.3335H2.66699" stroke="#5B4BFF" stroke-width="2.66667" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M4 27.9998C4 25.1998 6.26667 22.7998 9.06667 22.6665" stroke="#5B4BFF" stroke-width="2.66667" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M27.9596 6.6665C27.9596 9.4665 25.8263 11.7332 23.293 11.9998" stroke="#5B4BFF" stroke-width="2.66667" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M29.3333 17.3335H24" stroke="#5B4BFF" stroke-width="2.66667" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M22.9336 22.6665C25.7336 22.7998 28.0003 25.1998 28.0003 27.9998" stroke="#5B4BFF" stroke-width="2.66667" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>

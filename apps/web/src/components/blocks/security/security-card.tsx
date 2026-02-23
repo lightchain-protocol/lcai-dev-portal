@@ -1,5 +1,6 @@
 import { Icon } from "@/components/shared/icon";
 import { Button } from "@/components/ui/button";
+import { ArrowRight } from "lucide-react";
 
 interface SecurityCardProps {
 	icon: string;
@@ -10,24 +11,15 @@ interface SecurityCardProps {
 
 export function SecurityCard({ icon, title, desc, cta }: SecurityCardProps) {
 	return (
-		<div className="flex flex-col gap-5 px-8 py-10">
-			{/* Icon */}
-			<Icon name={icon.replace("/icons/", "").replace(".svg", "")} size={32} />
-
-			{/* Text */}
-			<div className="flex flex-1 flex-col gap-2">
-				<h3 className="type-body-s font-semibold text-white">{title}</h3>
-				<p className="type-body-xs text-content-slate-medium leading-relaxed">
-					{desc}
-				</p>
-			</div>
-
-			{/* CTA */}
-			<div>
-				<Button size="sm" variant="outline">
-					{cta}
-				</Button>
-			</div>
+		<div className="rounded-3xl border border-border-slate-soft bg-surface-slate-medium p-5">
+			<Icon name={icon.replace("/icons/", "").replace(".svg", "")} size={32} className="mb-5" />
+			<h3 className="text-content-slate-strong text-[20px] leading-[1.4] font-medium mb-1.5">{title}</h3>
+			<p className="text-[#9F9FA9] type-body-m mb-6">
+				{desc}
+			</p>
+			<Button size="sm" variant="outline">
+				{cta} <ArrowRight width={12} height={12}/>
+			</Button>
 		</div>
 	);
 }
