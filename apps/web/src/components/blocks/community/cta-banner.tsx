@@ -1,15 +1,12 @@
 import { Icon } from "@/components/shared/icon";
 import { Button } from "@/components/ui/button";
+import CommunityBannerGlow from "@/components/ui/svgs/community-banner-glow";
 
 export default function CtaBanner() {
 	return (
 		<div className="relative mx-auto max-w-[1000px] overflow-hidden rounded-3xl bg-surface-slate-medium px-4 pt-8 pb-12 text-center">
-			<div
-				className="pointer-events-none absolute inset-0 opacity-40"
-				style={{ mixBlendMode: "lighten" }}
-			>
-				<div className="absolute -top-1/2 left-1/2 h-full w-[120%] -translate-x-1/2 rounded-full bg-[#7342FE] blur-[120px]" />
-				<div className="absolute -top-1/4 left-1/2 h-[80%] w-[80%] -translate-x-1/2 rounded-full bg-[#E017FB] blur-[100px]" />
+			<div className="absolute top-0 left-0" style={{ willChange: "filter" }}>
+				<CommunityBannerGlow />
 			</div>
 
 			<div className="relative z-30 mx-auto flex h-[94px] w-[71px] justify-center">

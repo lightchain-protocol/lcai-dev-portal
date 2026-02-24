@@ -1,12 +1,12 @@
 import Image from "next/image";
 import CommunitySection from "@/components/blocks/community";
+import VideoCoursesSection from "@/components/blocks/courses";
 import UpcomingEventSection from "@/components/blocks/events";
 import LightchainFundamentals from "@/components/blocks/fundamentals";
 import GetStartedSection from "@/components/blocks/get-started";
 import HeroSection from "@/components/blocks/hero";
 import SecuritySection from "@/components/blocks/security";
 import ToolsSection from "@/components/blocks/tools";
-import VideoCoursesSection from "@/components/blocks/courses";
 
 export default function Home() {
 	return (
@@ -52,7 +52,7 @@ export default function Home() {
 				src="/images/pattern-lines.png"
 				width={1440}
 			/>
-			<VideoCoursesSection/>
+			<VideoCoursesSection />
 			<Image
 				alt="Pattern lines"
 				className="h-auto w-full"

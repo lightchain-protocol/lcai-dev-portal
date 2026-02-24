@@ -19,11 +19,7 @@ export default function CommunitySection() {
 
 const communities = [
 	{
-		icon: (
-			<div className="relative h-[47px] w-[60px]">
-				<Icon name="discord" size={60} />
-			</div>
-		),
+		icon: <Icon name="discord" size={60} />,
 		title: "Discord",
 		text: "Chat live with the community Get support and updates",
 	},

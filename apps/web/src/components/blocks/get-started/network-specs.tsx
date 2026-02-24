@@ -15,7 +15,7 @@ export function NetworkSpecs() {
 
 	return (
 		<div className="rounded-3xl bg-surface-slate-strong p-4 md:p-6 md:pb-4">
-			<div className="mb-6 flex items-center justify-between flex-wrap gap-3">
+			<div className="mb-6 flex flex-wrap items-center justify-between gap-3">
 				<h4 className="font-medium text-white">Network Specs</h4>
 				<SwitcherToggle
 					activeIndex={activeIndex}

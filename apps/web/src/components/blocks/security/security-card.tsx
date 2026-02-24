@@ -1,6 +1,6 @@
+import { ArrowRight } from "lucide-react";
 import { Icon } from "@/components/shared/icon";
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
 
 interface SecurityCardProps {
 	icon: string;
@@ -12,13 +12,17 @@ interface SecurityCardProps {
 export function SecurityCard({ icon, title, desc, cta }: SecurityCardProps) {
 	return (
 		<div className="rounded-3xl border border-border-slate-soft bg-surface-slate-medium p-5">
-			<Icon name={icon.replace("/icons/", "").replace(".svg", "")} size={32} className="mb-5" />
-			<h3 className="text-content-slate-strong text-[20px] leading-[1.4] font-medium mb-1.5">{title}</h3>
-			<p className="text-[#9F9FA9] type-body-m mb-6">
-				{desc}
-			</p>
+			<Icon
+				className="mb-5"
+				name={icon.replace("/icons/", "").replace(".svg", "")}
+				size={32}
+			/>
+			<h3 className="mb-1.5 font-medium text-[20px] text-content-slate-strong leading-[1.4]">
+				{title}
+			</h3>
+			<p className="type-body-m mb-6 text-[#9F9FA9]">{desc}</p>
 			<Button size="sm" variant="outline">
-				{cta} <ArrowRight width={12} height={12}/>
+				{cta} <ArrowRight height={12} width={12} />
 			</Button>
 		</div>
 	);

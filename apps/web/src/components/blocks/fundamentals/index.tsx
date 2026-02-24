@@ -6,13 +6,13 @@ export default function LightchainFundamentals() {
 	return (
 		<section className="py-30">
 			<div className="container">
-				<div className="relative mb-12 mx-auto w-full max-w-[604px] aspect-video">
+				<div className="relative mx-auto mb-12 aspect-video w-full max-w-[604px]">
 					<Image
 						alt="Lightchain Fundamentals"
+						className="object-contain"
 						fill
 						loading="lazy"
 						sizes="(max-width: 768px) 100vw, 604px"
-						className="object-contain"
 						src="/images/export-image.png"
 					/>
 				</div>

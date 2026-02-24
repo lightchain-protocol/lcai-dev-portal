@@ -1,4 +1,3 @@
-
 import { SecurityCard } from "./security-card";
 
 const ITEMS = [
@@ -26,10 +25,10 @@ export default function SecuritySection() {
 	return (
 		<section className="py-30">
 			<div className="container">
-				<h2 className="text-center text-content-slate-medium mb-6">
+				<h2 className="mb-6 text-center text-content-slate-medium">
 					Security and responsible disclosure
 				</h2>
-				<div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+				<div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
 					{ITEMS.map((item) => (
 						<SecurityCard key={item.title} {...item} />
 					))}
