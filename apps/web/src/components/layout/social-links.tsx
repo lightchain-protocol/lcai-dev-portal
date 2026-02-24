@@ -3,17 +3,17 @@ import { Link } from "@/components/ui/link";
 
 const SOCIALS = [
 	{
-		icon: (className: string) => <Icon className={className} name="x" />,
+		icon: (className: string) => <Icon className={className} name="x-white" />,
 		href: "https://x.com",
 		label: "X (Twitter)",
 	},
 	{
-		icon: (className: string) => <Icon className={className} name="discord" />,
+		icon: (className: string) => <Icon className={className} name="discord-white" />,
 		href: "https://discord.com",
 		label: "Discord",
 	},
 	{
-		icon: (className: string) => <Icon className={className} name="youtube" />,
+		icon: (className: string) => <Icon className={className} name="youtube-white" />,
 		href: "https://youtube.com",
 		label: "YouTube",
 	},
