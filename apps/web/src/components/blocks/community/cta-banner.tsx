@@ -10,16 +10,16 @@ export default function CtaBanner() {
 				<img src="/images/glow-effects.png" />
 			</div>
 
-			<div className="absolute top-8 bottom-8 left-4">
+			<div className="absolute top-8 bottom-8 left-4 hidden lg:block">
 				<CommunityVerticalBar />
 			</div>
-			<div className="absolute top-8 right-4 bottom-8">
+			<div className="absolute top-8 right-4 bottom-8 hidden lg:block">
 				<CommunityVerticalBar />
 			</div>
-			<div className="absolute top-4 right-8 left-8">
+			<div className="absolute top-4 right-8 left-8 hidden lg:block">
 				<CommunityHorizontalBar />
 			</div>
-			<div className="absolute right-8 bottom-4 left-8">
+			<div className="absolute right-8 bottom-4 left-8 hidden lg:block">
 				<CommunityHorizontalBar />
 			</div>
 

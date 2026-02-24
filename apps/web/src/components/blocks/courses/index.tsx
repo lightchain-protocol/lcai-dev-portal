@@ -4,7 +4,7 @@ import { CourseCard } from "./course-card";
 
 export default function VideoCoursesSection() {
 	return (
-		<section className="py-30">
+		<section className="py-20 md:py-30">
 			<div className="mx-auto w-full max-w-[1600px] px-4">
 				<div className="mb-10 text-center">
 					<h2 className="mb-3 text-content-slate-medium">Video Courses</h2>

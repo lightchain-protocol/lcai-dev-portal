@@ -4,7 +4,7 @@ import { OnboardingSection } from "./onboarding-section";
 
 export default function LightchainFundamentals() {
 	return (
-		<section className="py-30">
+		<section className="py-20 md:py-30">
 			<div className="container">
 				<div className="relative mx-auto mb-12 aspect-video w-full max-w-[604px]">
 					<Image

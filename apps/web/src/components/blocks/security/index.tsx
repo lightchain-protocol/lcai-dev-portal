@@ -23,7 +23,7 @@ const ITEMS = [
 
 export default function SecuritySection() {
 	return (
-		<section className="py-30">
+		<section className="py-20 md:py-30">
 			<div className="container">
 				<h2 className="mb-6 text-center text-content-slate-medium">
 					Security and responsible disclosure

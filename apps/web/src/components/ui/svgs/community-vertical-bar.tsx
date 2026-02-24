@@ -12,8 +12,8 @@ export default function CommunityVerticalBar() {
 				<path
 					d="M11.223 11.8577L12.7055 10.3752L11.223 8.89266M6.77547 8.89266L5.29297 10.3752L6.77547 11.8577M9.92578 7.41016L8.07266 13.3402"
 					stroke="#2F314D"
-					stroke-linecap="round"
-					stroke-linejoin="round"
+					strokeLinecap="round"
+					strokeLinejoin="round"
 				/>
 				<rect height="19.5" stroke="#171E2E" width="16" x="0.5" y="20" />
 				<path
@@ -24,8 +24,8 @@ export default function CommunityVerticalBar() {
 				<path
 					d="M11.223 50.8577L12.7055 49.3752L11.223 47.8927M6.77547 47.8927L5.29297 49.3752L6.77547 50.8577M9.92578 46.4102L8.07266 52.3402"
 					stroke="#2F314D"
-					stroke-linecap="round"
-					stroke-linejoin="round"
+					strokeLinecap="round"
+					strokeLinejoin="round"
 				/>
 				<rect height="19.5" stroke="#171E2E" width="16" x="0.5" y="59" />
 				<path
@@ -36,8 +36,8 @@ export default function CommunityVerticalBar() {
 				<path
 					d="M11.223 89.8577L12.7055 88.3752L11.223 86.8927M6.77547 86.8927L5.29297 88.3752L6.77547 89.8577M9.92578 85.4102L8.07266 91.3402"
 					stroke="#2F314D"
-					stroke-linecap="round"
-					stroke-linejoin="round"
+					strokeLinecap="round"
+					strokeLinejoin="round"
 				/>
 				<rect height="19.5" stroke="#171E2E" width="16" x="0.5" y="98" />
 				<path
@@ -48,8 +48,8 @@ export default function CommunityVerticalBar() {
 				<path
 					d="M11.223 128.858L12.7055 127.375L11.223 125.893M6.77547 125.893L5.29297 127.375L6.77547 128.858M9.92578 124.41L8.07266 130.34"
 					stroke="#2F314D"
-					stroke-linecap="round"
-					stroke-linejoin="round"
+					strokeLinecap="round"
+					strokeLinejoin="round"
 				/>
 				<rect height="19.5" stroke="#171E2E" width="16" x="0.5" y="137" />
 				<path
@@ -60,8 +60,8 @@ export default function CommunityVerticalBar() {
 				<path
 					d="M11.223 167.858L12.7055 166.375L11.223 164.893M6.77547 164.893L5.29297 166.375L6.77547 167.858M9.92578 163.41L8.07266 169.34"
 					stroke="#2F314D"
-					stroke-linecap="round"
-					stroke-linejoin="round"
+					strokeLinecap="round"
+					strokeLinejoin="round"
 				/>
 				<rect height="19.5" stroke="#171E2E" width="16" x="0.5" y="176" />
 				<path
@@ -72,8 +72,8 @@ export default function CommunityVerticalBar() {
 				<path
 					d="M11.223 206.858L12.7055 205.375L11.223 203.893M6.77547 203.893L5.29297 205.375L6.77547 206.858M9.92578 202.41L8.07266 208.34"
 					stroke="#2F314D"
-					stroke-linecap="round"
-					stroke-linejoin="round"
+					strokeLinecap="round"
+					strokeLinejoin="round"
 				/>
 				<rect height="19.5" stroke="#171E2E" width="16" x="0.5" y="215" />
 				<path
@@ -84,8 +84,8 @@ export default function CommunityVerticalBar() {
 				<path
 					d="M11.223 245.858L12.7055 244.375L11.223 242.893M6.77547 242.893L5.29297 244.375L6.77547 245.858M9.92578 241.41L8.07266 247.34"
 					stroke="#2F314D"
-					stroke-linecap="round"
-					stroke-linejoin="round"
+					strokeLinecap="round"
+					strokeLinejoin="round"
 				/>
 				<rect height="19.5" stroke="#171E2E" width="16" x="0.5" y="254" />
 				<path
@@ -96,8 +96,8 @@ export default function CommunityVerticalBar() {
 				<path
 					d="M11.223 284.858L12.7055 283.375L11.223 281.893M6.77547 281.893L5.29297 283.375L6.77547 284.858M9.92578 280.41L8.07266 286.34"
 					stroke="#2F314D"
-					stroke-linecap="round"
-					stroke-linejoin="round"
+					strokeLinecap="round"
+					strokeLinejoin="round"
 				/>
 				<rect height="19.5" stroke="#171E2E" width="16" x="0.5" y="293" />
 				<path
@@ -108,8 +108,8 @@ export default function CommunityVerticalBar() {
 				<path
 					d="M11.223 323.858L12.7055 322.375L11.223 320.893M6.77547 320.893L5.29297 322.375L6.77547 323.858M9.92578 319.41L8.07266 325.34"
 					stroke="#2F314D"
-					stroke-linecap="round"
-					stroke-linejoin="round"
+					strokeLinecap="round"
+					strokeLinejoin="round"
 				/>
 				<rect height="19.5" stroke="#171E2E" width="16" x="0.5" y="332" />
 				<path

@@ -5,7 +5,7 @@ import EventGlow from "../ui/svgs/event-glow";
 
 export default function UpcomingEventSection() {
 	return (
-		<section className="py-30">
+		<section className="py-20 md:py-30">
 			<div className="mx-auto max-w-335 px-4">
 				<div className="w-full rounded-[24px] border border-border-slate-soft p-5">
 					<div className="relative w-full overflow-hidden rounded-[24px] border border-border-slate-soft bg-surface-slate-medium px-4 py-4 md:px-6">
