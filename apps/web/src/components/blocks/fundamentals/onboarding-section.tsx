@@ -24,163 +24,158 @@ const STEPS = [
 
 export function OnboardingSection() {
 	return (
-		<div className="pt-18 pb-30">
-			<div className="container">
-				<div className="relative overflow-hidden rounded-[32px] border border-white/5 bg-[#080812]">
-					{/* Background Glow */}
-					<div className="absolute top-0 left-1/2 h-[300px] w-[600px] -translate-x-1/2 rounded-full bg-brand-primary/10 blur-[120px]" />
+		<div className="relative overflow-hidden rounded-3xl border border-border-slate-soft bg-surface-slate-medium p-6 pt-10 mt-4">
+			<div className="relative z-10">
+				<h2 className="text-content-slate-medium text-center mb-15">
+					Your first 30 minutes <br /> on Lightchain
+				</h2>
 
-					{/* Content */}
-					<div className="relative z-10">
-						{/* Header */}
-						<div className="flex flex-col items-center px-6 py-14 text-center">
-							<h2 className="type-h2 font-bold text-white leading-tight md:text-4xl">
-								Your first 30 minutes <br /> on Lightchain
-							</h2>
+				<div className="relative mx-auto mt-4 mb-15 max-w-[1100px]">
+					{/* Vertical Lines - only on desktop */}
+					<div className="hidden lg:block">
+						{[0, 33.33, 66.66, 100].map((left) => (
+							<div
+								className="absolute top-[-45px] bottom-[-45px] w-px"
+								key={left}
+								style={{
+									left: `${left}%`,
+									background:
+										"linear-gradient(to bottom, transparent, rgba(255,255,255,0.08) 20%, rgba(255,255,255,0.08) 85%, transparent)",
+								}}
+							/>
+						))}
+					</div>
+
+					<div className="grid grid-cols-1 lg:grid-cols-3">
+						{/* Row 1: Seq Numbers - Hidden on mobile if redundant with vertical layout, or kept if styled */}
+						<div className="relative col-span-1 lg:col-span-3 lg:flex hidden h-14 items-center">
+							<div
+								className="absolute top-0 right-[-80px] left-[-80px] h-px"
+								style={{
+									background:
+										"linear-gradient(to right, transparent, rgba(255,255,255,0.08) 10%, rgba(255,255,255,0.08) 90%, transparent)",
+								}}
+							/>
+							<div className="grid w-full grid-cols-3">
+								{STEPS.map((step) => (
+									<div className="px-8" key={step.num}>
+										<span className="type-body-l font-semibold text-brand-primary">
+											{step.num}
+										</span>
+									</div>
+								))}
+							</div>
+							<div
+								className="absolute right-[-80px] bottom-0 left-[-80px] h-px"
+								style={{
+									background:
+										"linear-gradient(to right, transparent, rgba(255,255,255,0.08) 10%, rgba(255,255,255,0.08) 90%, transparent)",
+								}}
+							/>
 						</div>
 
-						{/* Grid Area with Custom Lines */}
-						<div className="relative mx-auto mt-4 max-w-[1100px] px-4 pb-12">
-							{/* Vertical Lines - only on desktop */}
-							<div className="hidden lg:block">
-								{[0, 33.33, 66.66, 100].map((left) => (
-									<div
-										className="absolute top-[-15px] bottom-0 w-px"
-										key={left}
-										style={{
-											left: `${left}%`,
-											background:
-												"linear-gradient(to bottom, transparent, rgba(255,255,255,0.08) 15%, rgba(255,255,255,0.08) 85%, transparent)",
-										}}
-									/>
-								))}
-							</div>
-
-							<div className="grid grid-cols-1 lg:grid-cols-3">
-								{/* Row 1: Seq Numbers - Hidden on mobile if redundant with vertical layout, or kept if styled */}
-								<div className="relative col-span-1 lg:col-span-3 lg:flex hidden h-14 items-center">
-									<div
-										className="absolute top-0 right-[-30px] left-[-30px] h-px"
-										style={{
-											background:
-												"linear-gradient(to right, transparent, rgba(255,255,255,0.08) 10%, rgba(255,255,255,0.08) 90%, transparent)",
-										}}
-									/>
-									<div className="grid w-full grid-cols-3">
-										{STEPS.map((step) => (
-											<div className="px-8" key={step.num}>
-												<span className="type-body-s font-semibold text-brand-primary">
-													{step.num}
-												</span>
-											</div>
-										))}
+						{/* Main Content Area */}
+						{STEPS.map((step) => (
+							<div key={step.num} className="flex flex-col">
+								{/* step number for mobile */}
+								<div className="block lg:hidden px-4 pt-8">
+									<span className="type-body-s font-semibold text-brand-primary">
+										{step.num}
+									</span>
+								</div>
+								
+								<div className="flex flex-col p-6 lg:px-6 lg:py-5 md:h-60">
+									<div className="h-10 w-10 mb-8">{step.icon}</div>
+									<div className="flex flex-col gap-2">
+										<h3 className="h5 text-content-slate-strong mb-2">
+											{step.title}
+										</h3>
+										<p className="type-body-m text-[#9F9FA9]">
+											{step.desc}
+										</p>
 									</div>
-									<div
-										className="absolute right-[-30px] bottom-0 left-[-30px] h-px"
-										style={{
-											background:
-												"linear-gradient(to right, transparent, rgba(255,255,255,0.08) 10%, rgba(255,255,255,0.08) 90%, transparent)",
-										}}
-									/>
 								</div>
 
-								{/* Main Content Area */}
-								{STEPS.map((step) => (
-									<div key={step.num} className="flex flex-col">
-										{/* step number for mobile */}
-										<div className="block lg:hidden px-4 pt-8">
-											<span className="type-body-s font-semibold text-brand-primary">
-												{step.num}
-											</span>
+								<div className="px-6 pb-12 lg:hidden">
+									{step.num === "03" ? (
+										<div className="flex flex-col sm:flex-row gap-3">
+											<Button
+												className="flex-1 border-white/10 bg-white/5 hover:bg-white/10"
+												variant="outline"
+											>
+												Deploy
+											</Button>
+											<Button
+												className="flex-1 border-white/10 bg-white/5 hover:bg-white/10"
+												variant="outline"
+											>
+												Workload
+											</Button>
 										</div>
-										
-										<div className="flex flex-col gap-6 p-6 lg:p-10">
-											<div className="h-10 w-10">{step.icon}</div>
-											<div className="flex flex-col gap-2">
-												<h3 className="type-h4 font-bold text-white">
-													{step.title}
-												</h3>
-												<p className="type-body-s text-content-slate-medium leading-relaxed">
-													{step.desc}
-												</p>
-											</div>
-										</div>
+									) : (
+										<Button
+											className="w-full border-white/10 bg-white/5 hover:bg-white/10"
+											variant="outline"
+										>
+											{step.num === "01"
+												? "Add to Wallet"
+												: "Visit Faucet"}
+										</Button>
+									)}
+								</div>
+								
+								{/* Divider for mobile */}
+								<div className="lg:hidden h-px bg-white/10 mx-4" />
+							</div>
+						))}
 
-										<div className="px-6 pb-12 lg:hidden">
-											{step.num === "03" ? (
-												<div className="flex flex-col sm:flex-row gap-3">
-													<Button
-														className="flex-1 border-white/10 bg-white/5 hover:bg-white/10"
-														variant="outline"
-													>
-														Deploy
-													</Button>
-													<Button
-														className="flex-1 border-white/10 bg-white/5 hover:bg-white/10"
-														variant="outline"
-													>
-														Workload
-													</Button>
-												</div>
-											) : (
+						{/* Row 3: Buttons - Desktop only */}
+						<div className="relative col-span-1 lg:col-span-3 hidden lg:flex items-center">
+							<div
+								className="absolute right-[-80px] top-0 left-[-80px] h-px"
+								style={{
+									background:
+										"linear-gradient(to right, transparent, rgba(255,255,255,0.08) 10%, rgba(255,255,255,0.08) 90%, transparent)",
+								}}
+							/>
+							<div className="grid w-full grid-cols-3">
+								{STEPS.map((step) => (
+									<div className="p-8" key={step.num}>
+										{step.num === "03" ? (
+											<div className="flex gap-3">
 												<Button
-													className="w-full border-white/10 bg-white/5 hover:bg-white/10"
+													className="flex-1 border-white/10 bg-white/5 hover:bg-white/10"
 													variant="outline"
 												>
-													{step.num === "01"
-														? "Add to Wallet"
-														: "Visit Faucet"}
+													Deploy
 												</Button>
-											)}
-										</div>
-										
-										{/* Divider for mobile */}
-										<div className="lg:hidden h-px bg-white/10 mx-4" />
+												<Button
+													className="flex-1 border-white/10 bg-white/5 hover:bg-white/10"
+													variant="outline"
+												>
+													Workload
+												</Button>
+											</div>
+										) : (
+											<Button
+												className="w-full border-white/10 bg-white/5 hover:bg-white/10"
+												variant="outline"
+											>
+												{step.num === "01"
+													? "Add to Wallet"
+													: "Visit Faucet"}
+											</Button>
+										)}
 									</div>
 								))}
-
-								{/* Row 3: Buttons - Desktop only */}
-								<div className="relative col-span-1 lg:col-span-3 hidden lg:flex items-center">
-									<div className="grid w-full grid-cols-3">
-										{STEPS.map((step) => (
-											<div className="p-8" key={step.num}>
-												{step.num === "03" ? (
-													<div className="flex gap-3">
-														<Button
-															className="flex-1 border-white/10 bg-white/5 hover:bg-white/10"
-															variant="outline"
-														>
-															Deploy
-														</Button>
-														<Button
-															className="flex-1 border-white/10 bg-white/5 hover:bg-white/10"
-															variant="outline"
-														>
-															Workload
-														</Button>
-													</div>
-												) : (
-													<Button
-														className="w-full border-white/10 bg-white/5 hover:bg-white/10"
-														variant="outline"
-													>
-														{step.num === "01"
-															? "Add to Wallet"
-															: "Visit Faucet"}
-													</Button>
-												)}
-											</div>
-										))}
-									</div>
-									<div
-										className="absolute right-[-30px] bottom-0 left-[-30px] h-px"
-										style={{
-											background:
-												"linear-gradient(to right, transparent, rgba(255,255,255,0.08) 10%, rgba(255,255,255,0.08) 90%, transparent)",
-										}}
-									/>
-								</div>
 							</div>
+							<div
+								className="absolute right-[-80px] bottom-0 left-[-80px] h-px"
+								style={{
+									background:
+										"linear-gradient(to right, transparent, rgba(255,255,255,0.08) 10%, rgba(255,255,255,0.08) 90%, transparent)",
+								}}
+							/>
 						</div>
 					</div>
 				</div>

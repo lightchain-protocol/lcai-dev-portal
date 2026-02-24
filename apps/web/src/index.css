@@ -273,9 +273,7 @@
 		font-weight: var(--font-weight-semibold);
 	}
 	h2, .heading-2 {
-		font-size: var(--font-size-h2);
-		line-height: var(--line-height-h2);
-		font-weight: var(--font-weight-semibold);
+		@apply text-3xl;
 	}
 	h3 , .heading-3{
 		font-size: var(--font-size-h3);
@@ -295,13 +293,10 @@
 
 	/* Semantic text components */
 	.type-hero {
-		font-size: var(--font-size-hero);
-		line-height: var(--line-height-hero);
-		font-weight: var(--font-weight-bold);
+		@apply text-4xl font-bold;
 	}
 	.type-body-l {
-		font-size: var(--font-size-body-l);
-		line-height: var(--line-height-body-l);
+		@apply text-base;
 	}
 	.type-body-m {
 		font-size: var(--font-size-body-m);
@@ -319,6 +314,20 @@
 		font-size: var(--font-size-button-label);
 		line-height: var(--line-height-button-label);
 		font-weight: var(--font-weight-semibold);
+	}
+	@media (min-width: 96rem) {
+		h2, .heading-2 {
+			font-size: var(--font-size-h2);
+			line-height: var(--line-height-h2);
+		}
+		.type-hero {
+			font-size: var(--font-size-hero);
+			line-height: var(--line-height-hero);
+		}
+		.type-body-l {
+			font-size: var(--font-size-body-l);
+			line-height: var(--line-height-body-l);
+		}
 	}
 }
 

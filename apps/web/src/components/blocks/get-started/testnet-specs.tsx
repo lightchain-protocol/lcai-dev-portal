@@ -4,11 +4,11 @@ import { Field } from "./field";
 export function TestnetSpecs() {
 	return (
 		<div>
-			<div className="grid grid-cols-[40%_1fr] border-border-slate-strong border-b py-4">
+			<div className="grid grid-cols-[45%_1fr] border-border-slate-strong border-b py-4">
 				<Field label="Chain ID" value="[TBD]" />
 				<Field label="RPC URL" value="https://testnet-rpc.lightchain.io" />
 			</div>
-			<div className="grid grid-cols-[40%_1fr] border-border-slate-strong border-b py-4">
+			<div className="grid grid-cols-[45%_1fr] border-border-slate-strong border-b py-4">
 				<Field label="Currency / Gas Token" value="LCAI" />
 				<Field
 					label="Explorer URL"
