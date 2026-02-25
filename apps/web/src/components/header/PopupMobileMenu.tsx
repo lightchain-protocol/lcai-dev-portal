@@ -1,36 +1,21 @@
 'use client';
 
-import Image from 'next/image';
+import clsx from 'clsx';
 import Link from 'next/link';
 import { useEffect, useMemo, useRef, useState } from 'react';
-import clsx from 'clsx';
 
-import { ChevronDown, Facebook, Instagram, Network, Twitter, X } from 'lucide-react';
-import type { MegaCol, MenuConfig, NavCardItem } from './types';
+import { socialIconMap } from '@/lib/footer/socialIconMap';
+import type { RawSocialLink } from '@/lib/footer/types';
+import { ChevronDown, Instagram, Twitter, X } from 'lucide-react';
 import Logo from '../layout/logo';
+import type { MegaCol, MenuConfig, NavCardItem } from './types';
 
 interface PopupMobileMenuProps {
   menus: MenuConfig[];
   isActive: boolean;
   onClose: () => void;
+  socials: RawSocialLink[];
 }
-
-const socialLinks = [
-  { href: 'https://linktr.ee/lightchainai', label: 'Linktr', icon: <svg stroke="currentColor" fill="none" strokeWidth="2" viewBox="0 0 24 24" strokeLinecap="round" strokeLinejoin="round" height="20" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M4 10h16"></path><path d="M6.5 4.5l11 11"></path><path d="M6.5 15.5l11 -11"></path><path d="M12 10v-8"></path><path d="M12 15v7"></path></svg> },
-  { href: 'https://x.com/LightchainAI', label: 'X / Twitter', icon: <Twitter size={20} /> },
-  { href: 'https://www.instagram.com/light.chain.ai/', label: 'Instagram', icon: <Instagram size={20} /> },
-  {
-    href: 'https://discord.com/invite/lightchain', label: 'Discord', icon: <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="20"
-      height="20"
-      viewBox="0 0 24 24"
-      fill="currentColor"
-    >
-      <path d="M20.317 4.369a19.791 19.791 0 00-4.885-1.515c-.21.375-.455.888-.623 1.288a18.27 18.27 0 00-5.618 0 18.493 18.493 0 00-.626-1.288A19.736 19.736 0 003.68 4.37C.533 9.055-.32 13.59.099 18.057A19.9 19.9 0 006.18 20.69c.492-.671.93-1.385 1.308-2.138a12.72 12.72 0 01-2.083-.996c.176-.128.348-.26.515-.396a13.98 13.98 0 0011.658 0c.168.137.34.27.515.396-.662.4-1.36.735-2.084.997.38.753.817 1.466 1.31 2.137a19.89 19.89 0 006.078-2.63c.5-5.177-.838-9.674-3.08-13.29zM8.02 15.33c-1.182 0-2.148-1.088-2.148-2.425 0-1.337.955-2.425 2.148-2.425 1.202 0 2.158 1.088 2.148 2.425 0 1.337-.946 2.425-2.148 2.425zm7.975 0c-1.182 0-2.148-1.088-2.148-2.425 0-1.337.955-2.425 2.148-2.425 1.202 0 2.158 1.088 2.148 2.425 0 1.337-.946 2.425-2.148 2.425z" />
-    </svg>
-  },
-];
 
 /** Flatten the desktop mega-menu columns into a simple mobile list */
 function extractItemsFromColumns(columns: MegaCol[]) {
@@ -75,7 +60,7 @@ function extractItemsFromColumns(columns: MegaCol[]) {
   return groups;
 }
 
-export default function PopupMobileMenu({ menus, isActive, onClose }: PopupMobileMenuProps) {
+export default function PopupMobileMenu({ menus, isActive, onClose, socials }: PopupMobileMenuProps) {
   const menuRef = useRef<HTMLDivElement | null>(null);
   const [openIdx, setOpenIdx] = useState<number | null>(0);
 
@@ -202,16 +187,22 @@ export default function PopupMobileMenu({ menus, isActive, onClose }: PopupMobil
           </h6>
 
           <div className="mt-3 flex items-center justify-center gap-3">
-            {socialLinks.map(s => (
-              <a
-                key={s.label}
-                href={s.href}
-                aria-label={s.label}
-                className="flex h-9 w-9 items-center justify-center rounded-full bg-surface-m-soft text-content-secondary hover:text-content-primary hover:bg-surface-soft"
-              >
-                {s.icon}
-              </a>
-            ))}
+            {socials.map((social, idx) => {
+              const IconComponent = socialIconMap[social.iconKey];
+              if (!IconComponent) return null;
+
+              return (
+                <a
+                  key={idx}
+                  href={social?.href}
+                  aria-label={social?.text}
+                  className="text-lg text-white transition-colors"
+                  target={social?.target ?? undefined}
+                >
+                  <IconComponent />
+                </a>
+              );
+            })}
           </div>
         </div>
       </div>

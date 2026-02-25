@@ -10,7 +10,7 @@ export default function NavCard({ item }: { item: NavCardItem }) {
   const base =
     "relative group flex items-start gap-3 rounded-xl px-2.5 py-2 transition-all duration-300 ease-in-out";
   const hover =
-    "hover:bg-surface-m-soft hover:shadow-[inset_0_0_0_1px_rgba(255,255,255,0.06)]";
+    "hover:bg-surface-slate-soft hover:shadow-[inset_0_0_0_1px_rgba(255,255,255,0.06)]";
   const active = item.active
     ? "bg-surface-soft shadow-[inset_0_0_0_1px_rgba(255,255,255,0.12)]"
     : "";
@@ -34,22 +34,22 @@ export default function NavCard({ item }: { item: NavCardItem }) {
           style={gradient}
         />
         {/* inner dark disk + thin inner ring */}
-        <span className="absolute inset-px rounded-full bg-background ring-2 ring-bdr-light" />
+        <span className="absolute inset-px rounded-full bg-background ring-2 ring-border-slate-soft group-hover:ring-transparent transition-all duration-300" />
         {/* actual icon on top */}
         <span className="relative z-1 inline-flex h-9 w-9 items-center justify-center rounded-full">
           {item.icon ? (
-            <item.icon size={16} className="text-content-primary transition-transform duration-300 group-hover:scale-[1.02]" />
+            <item.icon size={16} className="text-content-slate-medium transition-transform duration-300 group-hover:scale-[1.02]" />
           ) : null}
         </span>
       </span>
 
       {/* text */}
       <span className="min-w-0">
-        <span className="block text-sm font-semibold leading-tight text-content-primary">
+        <span className="block text-sm font-semibold leading-tight text-content-slate-strong">
           {item.label}
         </span>
         {item.desc && (
-          <span className="mt-0.5 block text-xs leading-snug text-content-secondary">
+          <span className="mt-0.5 block text-xs leading-snug text-content-slate-medium">
             {item.desc}
           </span>
         )}

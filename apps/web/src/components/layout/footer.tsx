@@ -1,10 +1,13 @@
-import { fetchFooterConfig } from "@/lib/footer/fetchFooterConfig";
 import { socialIconMap } from "@/lib/footer/socialIconMap";
+import type { RawFooterColumn, RawSocialLink } from "@/lib/footer/types";
 import { Icon } from "../shared/icon";
 
-export default async function Footer() {
-  const raw = await fetchFooterConfig();
-  const { columns: footerColumns, social: socials } = raw;
+type FooterProps = {
+  socials: RawSocialLink[];
+  footerColumns: RawFooterColumn[];
+};
+
+export default async function Footer({ socials, footerColumns }: FooterProps) {
 
   return (
     <footer className="border-[#27272A] border-t bg-surface-slate-strong px-6 pt-16 pb-10 md:px-14">
