@@ -1,29 +1,13 @@
 import { Icon } from "@/components/shared/icon";
 import { Button } from "@/components/ui/button";
-import CommunityHorizontalBar from "@/components/ui/svgs/community-horizontal-bar";
-import CommunityVerticalBar from "@/components/ui/svgs/community-vertical-bar";
 
 export default function CtaBanner() {
 	return (
-		<div className="relative mx-auto flex min-h-[415px] max-w-[1000px] flex-col items-center justify-center overflow-hidden rounded-3xl bg-surface-slate-medium px-4 pt-8 pb-12 text-center">
+		<div className="relative mx-auto flex min-h-103.75 max-w-250 flex-col items-center justify-center overflow-hidden rounded-3xl bg-surface-slate-medium px-4 pt-8 pb-12 text-center">
 			<div className="absolute top-0 left-0">
 				<img src="/images/glow-effects.png" />
 			</div>
-
-			<div className="absolute top-8 bottom-8 left-4 hidden lg:block">
-				<CommunityVerticalBar />
-			</div>
-			<div className="absolute top-8 right-4 bottom-8 hidden lg:block">
-				<CommunityVerticalBar />
-			</div>
-			<div className="absolute top-4 right-8 left-8 hidden lg:block">
-				<CommunityHorizontalBar />
-			</div>
-			<div className="absolute right-8 bottom-4 left-8 hidden lg:block">
-				<CommunityHorizontalBar />
-			</div>
-
-			<div className="relative z-30 mx-auto flex h-[94px] w-[71px] justify-center">
+			<div className="relative z-30 mx-auto flex h-23.5 w-17.75 justify-center">
 				<Icon name="icon-lightning" size={94} />
 			</div>
 
