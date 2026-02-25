@@ -129,9 +129,7 @@ export default function PopupMobileMenu({ menus, isActive, onClose }: PopupMobil
       >
         {/* Header */}
         <div className="sticky top-0 z-10 flex items-center justify-between border-b border-bdr-light bg-surface-x-soft-hex p-4">
-          <Link href="/" onClick={onClose} className="inline-flex items-center gap-2">
-            <Logo />
-          </Link>
+          <Logo onClick={onClose} className="inline-flex items-center gap-2" />
           <button
             className="flex h-9 w-9 items-center justify-center rounded-full text-content-secondary transition-colors duration-300 ease-in-out hover:bg-surface-soft"
             onClick={onClose}
