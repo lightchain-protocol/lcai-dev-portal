@@ -25,6 +25,7 @@
   "dependencies": {
     "@lc-dev-portal/env": "workspace:*",
     "dotenv": "catalog:",
+    "lucide-react": "^0.575.0",
     "zod": "catalog:"
   },
   "devDependencies": {
