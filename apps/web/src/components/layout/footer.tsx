@@ -1,23 +1,28 @@
+import { fetchFooterConfig } from "@/lib/footer/fetchFooterConfig";
+import { socialIconMap } from "@/lib/footer/socialIconMap";
 import { Icon } from "../shared/icon";
 
-export default function Footer() {
+export default async function Footer() {
+  const raw = await fetchFooterConfig();
+  const { columns: footerColumns, social: socials } = raw;
+
   return (
     <footer className="border-[#27272A] border-t bg-surface-slate-strong px-6 pt-16 pb-10 md:px-14">
       <div className="container">
-        <div className="grid gap-10 grid-cols-2 md:grid-cols-3 lg:grid-cols-5 pb-12">
-          {footerNav.map((col) => (
-            <div className="flex flex-col gap-4" key={col.heading}>
+        <div className="grid gap-10 grid-cols-2 md:grid-cols-3 lg:grid-cols-4 pb-12 max-w-[1020px] mx-auto">
+          {footerColumns.map((col) => (
+            <div className="flex flex-col gap-4" key={col.title}>
               <h4 className="mb-2 font-semibold text-base text-white leading-normal md:mb-4">
-                {col.heading}
+                {col.title}
               </h4>
               <ul className="flex flex-col gap-2.5">
-                {col.links.map((link) => (
-                  <li key={link}>
+                {col.links.map((link, idx) => (
+                  <li key={idx}>
                     <a
+                      href={link.href}
                       className="text-[#9F9FA9] text-sm transition-colors hover:text-white/80"
-                      href="/"
                     >
-                      {link}
+                      {link.text}
                     </a>
                   </li>
                 ))}
@@ -32,79 +37,25 @@ export default function Footer() {
           <Icon name="logo" size={24} />
           <span> © 2026 Lightchain. All rights reserved.</span>
         </div>
-
         <div className="flex items-center gap-5">
-          {socials.map(({ label, icon }) => (
-            <a
-              aria-label={label}
-              className="text-lg text-white transition-colors"
-              href="/"
-              key={label}
-            >
-              <Icon className="text-white" name={icon} size={24} />
-            </a>
-          ))}
+          {socials.map((social, idx) => {
+            const IconComponent = socialIconMap[social.iconKey];
+            if (!IconComponent) return null;
+
+            return (
+              <a
+                key={idx}
+                href={social?.href}
+                aria-label={social?.text}
+                className="text-lg text-white transition-colors"
+                target={social?.target ?? undefined}
+              >
+                <IconComponent />
+              </a>
+            );
+          })}
         </div>
       </div>
     </footer>
   );
 }
-
-const footerNav = [
-  {
-    heading: "Docs",
-    links: [
-      "Core Concepts",
-      "APIs",
-      "SDKs",
-      "Smart Contracts",
-      "CLI Reference",
-    ],
-  },
-  {
-    heading: "Build",
-    links: [
-      "Quickstart Guides",
-      "Tutorials",
-      "Starter Kits",
-      "Example Apps",
-      "And Dev Tooling",
-    ],
-  },
-  {
-    heading: "Run a Node",
-    links: [
-      "Validator Guide",
-      "Hardware Requirements",
-      "Staking",
-      "Testnet Participation",
-      "Monitoring",
-    ],
-  },
-  {
-    heading: "Ecosystem",
-    links: [
-      "Projects, Wallets",
-      "Explorers",
-      "Infrastructure Partners",
-      "Potentially Grants.",
-    ],
-  },
-  {
-    heading: "Research",
-    links: [
-      "Whitepaper",
-      "Protocol Specs",
-      "Governance",
-      "Roadmap",
-      "Improvement Proposals",
-    ],
-  },
-];
-
-const socials = [
-  { label: "Twitter", icon: "x-white" },
-  { label: "GitHub", icon: "github-white" },
-  { label: "Discord", icon: "discord-white" },
-  { label: "YouTube", icon: "youtube-white" },
-];
