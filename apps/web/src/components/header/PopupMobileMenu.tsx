@@ -46,13 +46,6 @@ function extractItemsFromColumns(columns: MegaCol[]) {
       }
       return;
     }
-
-    // Optional: show imageCard as a single CTA if provided
-    if (col.type === 'imageCard' && col.href && col.title) {
-      groups.push({
-        items: [{ label: col.title, href: col.href as NavCardItem["href"] }],
-      });
-    }
   });
 
   // If nothing matched, provide an empty group to avoid collapse oddities
