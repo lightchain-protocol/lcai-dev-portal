@@ -1,17 +1,23 @@
 import type { ReactNode } from "react";
 import CommunityGlow from "@/components/ui/svgs/community-glow";
+import { Link } from "@/components/ui/link";
 
 export default function CommunityCard({
   title,
   text,
   icon,
+  href,
 }: {
   title: string;
   text: string;
   icon: ReactNode;
+  href: string;
 }) {
   return (
-    <div className="relative overflow-hidden rounded-3xl border border-border-slate-soft bg-surface-slate-strong px-5 pt-4 pb-6 text-center">
+    <Link
+      href={href}
+      className="relative overflow-hidden rounded-3xl border border-border-slate-soft bg-surface-slate-strong hover:bg-brand-dark transition-all duration-300 px-5 pt-4 pb-6 text-center"
+    >
       <div
         className="absolute bottom-0 left-0"
         style={{ willChange: "filter" }}
@@ -25,6 +31,6 @@ export default function CommunityCard({
         {title}
       </h5>
       <p className="type-body-m relative z-10 text-[#9F9FA9]">{text}</p>
-    </div>
+    </Link>
   );
 }

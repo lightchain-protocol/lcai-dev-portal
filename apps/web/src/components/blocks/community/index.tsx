@@ -22,15 +22,18 @@ const communities = [
     icon: <Icon name="discord" size={60} />,
     title: "Discord",
     text: "Chat live with the community Get support and updates",
+    href: "https://discord.gg/lightchain",
   },
   {
     icon: <Icon name="github" size={52} />,
     title: "GitHub",
     text: "Explore the source code Report issues and contribute",
+    href: "https://github.com/lightchain-protocol"
   },
   {
     icon: <Icon name="icon-community" size={84} />,
     title: "Forum",
     text: "Join technical discussions Share proposals and feedback",
+    href: "https://forum.lightchain.ai/",
   },
 ];
