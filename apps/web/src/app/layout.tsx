@@ -6,6 +6,7 @@ import Footer from "@/components/layout/footer";
 import Header from "@/components/header/header";
 import Providers from "@/components/shared/providers";
 import { fetchNavConfig } from "@/lib/nav/fetchNavConfig";
+import { fetchFooterConfig } from "@/lib/footer/fetchFooterConfig";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -24,15 +25,17 @@ export default async function RootLayout({
   children: React.ReactNode;
 }>) {
   const rawMenus = await fetchNavConfig();
+  const raw = await fetchFooterConfig();
+  const { columns: footerColumns, social: socials } = raw;
 
   return (
     <html className={inter.variable} lang="en" suppressHydrationWarning>
       <body className="select-none font-sans antialiased">
         <Providers>
           <div className="grid h-svh grid-rows-[auto_1fr]">
-            <Header rawMenus={rawMenus} />
+            <Header rawMenus={rawMenus} socials={socials} />
             <main>{children}</main>
-            <Footer />
+            <Footer footerColumns={footerColumns} socials={socials} />
           </div>
         </Providers>
       </body>

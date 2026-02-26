@@ -1,37 +1,31 @@
 import { Icon } from "@/components/shared/icon";
-import { Link } from "@/components/ui/link";
+import { socialIconMap } from "@/lib/footer/socialIconMap";
+import type { RawSocialLink } from "@/lib/footer/types";
 
-const SOCIALS = [
-	{
-		icon: (className: string) => <Icon className={className} name="x-white" />,
-		href: "https://x.com",
-		label: "X (Twitter)",
-	},
-	{
-		icon: (className: string) => <Icon className={className} name="discord-white" />,
-		href: "https://discord.com",
-		label: "Discord",
-	},
-	{
-		icon: (className: string) => <Icon className={className} name="youtube-white" />,
-		href: "https://youtube.com",
-		label: "YouTube",
-	},
-];
+type SocialProps = {
+  socials: RawSocialLink[];
+};
 
-export default function SocialLinks() {
-	return (
-		<div className="flex items-center gap-4">
-			{SOCIALS.map((social) => (
-				<Link
-					aria-label={social.label}
-					className="block text-content-slate-strong transition-colors hover:text-brand-secondary"
-					href={social.href}
-					key={social.label}
-				>
-					{social.icon("size-5")}
-				</Link>
-			))}
-		</div>
-	);
+export default function SocialLinks({ socials }: SocialProps) {
+
+  return (
+    <div className="flex items-center gap-4">
+      {socials.map((social, idx) => {
+        const IconComponent = socialIconMap[social.iconKey];
+        if (!IconComponent) return null;
+
+        return (
+          <a
+            key={idx}
+            href={social?.href}
+            aria-label={social?.text}
+            className="text-lg text-white transition-colors"
+            target={social?.target ?? undefined}
+          >
+            <IconComponent />
+          </a>
+        );
+      })}
+    </div>
+  );
 }

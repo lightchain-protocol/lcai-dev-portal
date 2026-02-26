@@ -1,22 +1,19 @@
 "use client";
 
-import { Menu } from "lucide-react";
-import { Button } from "../ui/button";
-import Logo from "../layout/logo";
-import NavMenu from "./nav-menu";
-import SocialLinks from "../layout/social-links";
-import Navbar from "./nav-menu";
-import type { RawNavConfig } from "@/lib/nav/types";
-import type { MenuConfig, NavCardItem } from "./types";
 import { iconMap } from "@/lib/nav/iconMap";
 import { resolveTarget } from "@/lib/nav/resolveTarget";
+import type { RawNavConfig } from "@/lib/nav/types";
+import { Menu } from "lucide-react";
 import { useState } from "react";
+import Logo from "../layout/logo";
+import SocialLinks from "../layout/social-links";
+import { Button } from "../ui/button";
+import Navbar from "./nav-menu";
 import PopupMobileMenu from "./PopupMobileMenu";
+import type { MenuConfig, NavCardItem } from "./types";
+import type { RawSocialLink } from "@/lib/footer/types";
 
 function resolveMenus(raw: RawNavConfig[]): MenuConfig[] {
-  // function resolveMenus(raw?: RawNavConfig[] | null): MenuConfig[] {
-  // if (!raw || !Array.isArray(raw)) return [];
-
   return raw.map((menu) => ({
     ...menu,
     columns: menu.columns.map((col) => {
@@ -37,7 +34,7 @@ function resolveMenus(raw: RawNavConfig[]): MenuConfig[] {
 }
 
 export default function Header(
-  { rawMenus }: { rawMenus: RawNavConfig[] }
+  { rawMenus, socials }: { rawMenus: RawNavConfig[], socials: RawSocialLink[] }
 ) {
   const menus = resolveMenus(rawMenus);
   const [isMenuActive, setIsMenuActive] = useState(false);
@@ -48,12 +45,11 @@ export default function Header(
   return (
     <>
       <header className="sticky top-0 z-50 w-full bg-black/50 backdrop-blur-md">
-        <div className="flex h-20 items-center justify-between px-6 md:h-23 md:px-12.5">
+        <div className="flex h-20 items-center justify-between px-6 md:h-20 md:px-12.5">
           {/* Left: Logo */}
           <Logo />
 
           {/* Center: Navigation (Desktop only) */}
-          {/* <NavMenu /> */}
           {/* Desktop nav */}
           <div className="hidden xl:block">
             <Navbar menus={menus} />
@@ -62,7 +58,7 @@ export default function Header(
           {/* Right: Actions */}
           <div className="flex items-center gap-4 md:gap-8">
             <div className="hidden items-center gap-8 lg:flex">
-              <SocialLinks />
+              <SocialLinks socials={socials} />
             </div>
             <Button
               className="hidden px-5 md:flex"
@@ -92,6 +88,7 @@ export default function Header(
         isActive={isMenuActive}
         menus={menus}
         onClose={closeMenu}
+        socials={socials}
       />
     </>
   );

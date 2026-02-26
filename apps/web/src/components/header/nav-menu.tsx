@@ -61,14 +61,14 @@ export default function Navbar({ menus }: { menus: MenuConfig[] }) {
 
               <div
                 className={clsx(
-                  "lightchain-megamenu absolute top-[100%-10px] z-40 opacity-0 invisible transition-opacity duration-300 ease-in-out bg-background",
+                  "lightchain-megamenu absolute top-[100%-10px] z-40 opacity-0 invisible transition-opacity duration-300 ease-in-out",
                   align,
                   open === idx && "visible opacity-100"
                 )}
               >
                 <div
                   className={clsx(
-                    "wrapper mt-0 overflow-hidden rounded-b-2xl border border-bdr-light border-t-0 bg-surface-x-soft-hex shadow-[0_8px_24px_-6px_rgba(12,12,13,0.08),_0_4px_4px_-4px_rgba(12,12,13,0.05)]",
+                    "wrapper mt-0 overflow-hidden rounded-b-2xl border border-bdr-light border-t-0 bg-surface-x-soft-hex shadow-[0_8px_24px_-6px_rgba(12,12,13,0.08),0_4px_4px_-4px_rgba(12,12,13,0.05)] bg-surface-slate-medium",
                     width,
                     "max-w-[95vw] xl:max-w-none"
                   )}
