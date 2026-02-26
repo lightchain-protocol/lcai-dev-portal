@@ -15,15 +15,15 @@ export default function Home() {
 			<GetStartedSection />
 			<PatternLines />
 			<LightchainFundamentals />
-			<PatternLines/>
+			<PatternLines />
 			<ToolsSection />
-			<PatternLines/>
+			<PatternLines />
 			<SecuritySection />
-			<PatternLines/>
+			<PatternLines />
 			<UpcomingEventSection />
-			<PatternLines/>
-			<VideoCoursesSection />
-			<PatternLines/>
+			<PatternLines />
+			{/* <VideoCoursesSection />
+			<PatternLines/> */}
 			<CommunitySection />
 		</>
 	);
