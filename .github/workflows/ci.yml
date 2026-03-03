@@ -1,0 +1,62 @@
+name: CI
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+
+jobs:
+  detect-changes:
+    runs-on: ubuntu-latest
+    outputs:
+      web: ${{ steps.filter.outputs.web }}
+      fumadocs: ${{ steps.filter.outputs.fumadocs }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dorny/paths-filter@v3
+        id: filter
+        with:
+          filters: |
+            web:
+              - 'apps/web/**'
+              - 'packages/**'
+              - 'package.json'
+              - 'bun.lock'
+            fumadocs:
+              - 'apps/fumadocs/**'
+              - 'packages/**'
+              - 'package.json'
+              - 'bun.lock'
+
+  build-web:
+    needs: detect-changes
+    if: ${{ needs.detect-changes.outputs.web == 'true' }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version-file: ".bun-version"
+      - run: bun install --frozen-lockfile
+      - run: bun run check
+      - run: bun run check-types
+        working-directory: apps/web
+      - run: bun run build
+        working-directory: apps/web
+
+  build-fumadocs:
+    needs: detect-changes
+    if: ${{ needs.detect-changes.outputs.fumadocs == 'true' }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version-file: ".bun-version"
+      - run: bun install --frozen-lockfile
+      - run: bun run check
+      - run: bun run check-types
+        working-directory: apps/fumadocs
+      - run: bun run build
+        working-directory: apps/fumadocs
