@@ -15,7 +15,7 @@ We take the security of our project very seriously.
 
 If you discover a security vulnerability, please do NOT open a public issue. Instead, please report it privately.
 
-**Contact:** `security@example.com`
+**Contact:** Please reach out to us directly in our [Discord Server](https://discord.gg/s6RDuBHJ) (e.g., by sending a direct message to a server moderator in the [#bug-reports channel](https://discord.com/channels/1390545605847285900/1390661982402646246)).
 
 We will:
 - Acknowledge your report within 48 hours.
