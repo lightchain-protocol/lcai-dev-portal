@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Icon } from "@/components/shared/icon";
 import { Button } from "@/components/ui/button";
 
@@ -5,12 +6,17 @@ export default function CtaBanner() {
 	return (
 		<div className="relative mx-auto flex min-h-103.75 max-w-250 flex-col items-center justify-center overflow-hidden rounded-3xl bg-surface-slate-medium px-4 pt-8 pb-12 text-center">
 			<div className="absolute top-0 left-0">
-				<img src="/images/glow-effects.png" />
+				<Image
+					alt=""
+					aria-hidden="true"
+					height={400}
+					src="/images/glow-effects.png"
+					width={800}
+				/>
 			</div>
 			<div className="relative z-30 mx-auto flex h-23.5 w-17.75 justify-center">
 				<Icon name="icon-lightning" size={94} />
 			</div>
-
 			<h3 className="relative z-30 my-2 text-content-slate-strong">
 				Building something serious?
 			</h3>
@@ -18,7 +24,6 @@ export default function CtaBanner() {
 				Let's help you ship it. Grants, technical support, and launch help for
 				teams building on LightChain.
 			</p>
-
 			<div className="relative z-30 mt-10 flex flex-wrap items-center justify-center gap-3">
 				<Button variant="gradient">Explore grants</Button>
 				<Button variant="outline">Talk to the team</Button>

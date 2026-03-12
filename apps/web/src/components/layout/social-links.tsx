@@ -1,31 +1,31 @@
-import { Icon } from "@/components/shared/icon";
-import { socialIconMap } from "@/lib/footer/socialIconMap";
+import { socialIconMap } from "@/lib/footer/social-icon-map";
 import type { RawSocialLink } from "@/lib/footer/types";
 
-type SocialProps = {
-  socials: RawSocialLink[];
-};
+interface SocialProps {
+	socials: RawSocialLink[];
+}
 
 export default function SocialLinks({ socials }: SocialProps) {
+	return (
+		<div className="flex items-center gap-4">
+			{socials.map((social, _idx) => {
+				const IconComponent = socialIconMap[social.iconKey];
+				if (!IconComponent) {
+					return null;
+				}
 
-  return (
-    <div className="flex items-center gap-4">
-      {socials.map((social, idx) => {
-        const IconComponent = socialIconMap[social.iconKey];
-        if (!IconComponent) return null;
-
-        return (
-          <a
-            key={idx}
-            href={social?.href}
-            aria-label={social?.text}
-            className="text-lg text-white transition-colors"
-            target={social?.target ?? undefined}
-          >
-            <IconComponent />
-          </a>
-        );
-      })}
-    </div>
-  );
+				return (
+					<a
+						aria-label={social?.text}
+						className="text-lg text-white transition-colors"
+						href={social?.href}
+						key={social.href ?? social.iconKey}
+						target={social?.target ?? undefined}
+					>
+						<IconComponent />
+					</a>
+				);
+			})}
+		</div>
+	);
 }

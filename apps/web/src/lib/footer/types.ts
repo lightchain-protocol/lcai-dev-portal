@@ -1,23 +1,23 @@
-export type RawFooterLink = {
-  text: string;
-  href: string;
-  target?: "_blank";
-};
+export interface RawFooterLink {
+	text: string;
+	href: string;
+	target?: "_blank";
+}
 
-export type RawFooterColumn = {
-  title: string;
-  style: "top" | "bottom";
-  links: RawFooterLink[];
-};
+export interface RawFooterColumn {
+	title: string;
+	style: "top" | "bottom";
+	links: RawFooterLink[];
+}
 
-export type RawSocialLink = {
-  text: string;
-  href: string;
-  target: "_blank";
-  iconKey: string;
-};
+export interface RawSocialLink {
+	text: string;
+	href: string;
+	target: "_blank";
+	iconKey: string;
+}
 
-export type RawFooterConfig = {
-  columns: RawFooterColumn[];
-  social: RawSocialLink[];
-};
+export interface RawFooterConfig {
+	columns: RawFooterColumn[];
+	social: RawSocialLink[];
+}

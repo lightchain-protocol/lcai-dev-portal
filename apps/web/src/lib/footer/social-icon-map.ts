@@ -8,11 +8,11 @@ import Telegram from "@/components/icons/Telegram";
 import Twitter from "@/components/icons/Twitter";
 
 export const socialIconMap: Record<string, ComponentType> = {
-  "twitter": Twitter,
-  "discord": Discord,
-  "linktree": LinkTree,
-  "coinmarketcap": Coinmarketcap,
-  "community": Community,
-  "telegram": Telegram,
-  "medium": Medium,
+	twitter: Twitter,
+	discord: Discord,
+	linktree: LinkTree,
+	coinmarketcap: Coinmarketcap,
+	community: Community,
+	telegram: Telegram,
+	medium: Medium,
 };
