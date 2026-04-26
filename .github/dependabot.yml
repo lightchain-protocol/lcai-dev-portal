@@ -1,0 +1,31 @@
+# See https://docs.github.com/en/code-security/dependabot/dependabot-version-updates/configuration-options-for-the-dependabot-yml-file
+version: 2
+updates:
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    labels:
+      - "dependencies"
+      - "github-actions"
+    groups:
+      actions-minor-and-patch:
+        update-types:
+          - "minor"
+          - "patch"
+
+  # Bun is supported as a Dependabot ecosystem (GA Feb 2025), but Dependabot
+  # currently does not update bun.lock in workspace monorepos, so PRs would
+  # fail this repo's `bun install --frozen-lockfile` CI step. Enable once
+  # https://github.com/dependabot/dependabot-core/issues/14223 is resolved.
+  # - package-ecosystem: "bun"
+  #   directory: "/"
+  #   schedule:
+  #     interval: "weekly"
+  #   labels:
+  #     - "dependencies"
+  #   groups:
+  #     bun-minor-and-patch:
+  #       update-types:
+  #         - "minor"
+  #         - "patch"
