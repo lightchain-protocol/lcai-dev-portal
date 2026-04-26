@@ -24,6 +24,7 @@ const buttonVariants = cva(
 				default: "type-body-m h-11 gap-2 px-4 font-bold",
 				xs: "type-body-s h-8 gap-1 px-3 font-bold",
 				sm: "type-body-s h-9 gap-1.5 px-4 font-bold",
+				icon: "h-9 w-9 p-0",
 			},
 		},
 		defaultVariants: {
