@@ -43,3 +43,25 @@ Husky git hooks are set up to run `commitlint` and `lint-staged`, which will aut
 2. Open a Pull Request against the `main` branch.
 3. Fill out the Pull Request template comprehensively.
 4. Wait for CI checks to pass and for maintainers to review your code.
+
+## Troubleshooting
+
+**`bun: command not found` after installing Bun.** The installer appends `~/.bun/bin` to your shell rc file, but your current shell doesn't pick that up automatically. Open a new terminal, or run `exec $SHELL` (or `source ~/.zshrc` / `source ~/.bashrc`).
+
+**Bun is not installed.** This project requires Bun. Install it with:
+
+```bash
+curl -fsSL https://bun.sh/install | bash
+```
+
+See [bun.sh](https://bun.sh/) for alternative installation methods.
+
+**`git commit` fails with `bun: command not found`.** Husky hooks (`commitlint`, `lint-staged`) shell out to Bun. If your terminal doesn't have Bun on `PATH`, the hook fails. See the two items above.
+
+**Port already in use.** `apps/web` runs on `3001` and `apps/fumadocs` on `4000`. If a port is occupied, free it (e.g. `lsof -ti:3001 | xargs kill`) or change the `--port` flag in the corresponding `apps/*/package.json` `dev` script.
+
+**`commitlint` rejects your commit message.** Husky enforces [Conventional Commits](https://www.conventionalcommits.org/). Use one of these types: `feat`, `fix`, `docs`, `chore`, `refactor`, `test`, `style`, `perf`, `ci`, `build`. Example: `feat: add settings menu`.
+
+**Dev server fails with missing environment variables.** After cloning, copy the example file: `cp .env.example .env`. Skipping this step can cause cryptic startup errors.
+
+**First `bun install` is slow.** Installing the ~1400 packages takes a couple of minutes the first time. Subsequent installs reuse the lockfile and are much faster — don't cancel mid-install.
