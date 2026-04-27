@@ -3,13 +3,13 @@ import { memo } from "react";
 const GetStartedGlow = () => {
 	return (
 		<svg
+			aria-hidden="true"
 			fill="none"
 			height="181"
 			viewBox="0 0 1100 181"
 			width="1100"
 			xmlns="http://www.w3.org/2000/svg"
 		>
-			<title>Get Started Glow</title>
 			<g filter="url(#filter0_f_1684_1352)" opacity="0.6">
 				<path d="M524.697 36L-9 -58.5L1064 -58.5L524.697 36Z" fill="#7342FE" />
 			</g>

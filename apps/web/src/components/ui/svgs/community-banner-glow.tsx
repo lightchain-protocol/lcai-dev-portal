@@ -3,13 +3,13 @@ import { memo } from "react";
 const CommunityBannerGlow = () => {
 	return (
 		<svg
+			aria-hidden="true"
 			fill="none"
 			height="375"
 			viewBox="0 0 1000 375"
 			width="1000"
 			xmlns="http://www.w3.org/2000/svg"
 		>
-			<title>Community Banner Glow</title>
 			<g style={{ mixBlendMode: "difference" }}>
 				<g filter="url(#filter0_f_274_2439)">
 					<path

@@ -3,13 +3,13 @@ import { memo } from "react";
 const CommunityGlow = () => {
 	return (
 		<svg
+			aria-hidden="true"
 			fill="none"
 			height="204"
 			viewBox="0 0 323 204"
 			width="323"
 			xmlns="http://www.w3.org/2000/svg"
 		>
-			<title>Community Glow</title>
 			<g opacity="0.5" style={{ mixBlendMode: "lighten" }}>
 				<g filter="url(#filter0_f_188_3155)">
 					<path
