@@ -3,13 +3,13 @@ import { memo } from "react";
 const FundamentalGlow = () => {
 	return (
 		<svg
+			aria-hidden="true"
 			fill="none"
 			height="213"
 			viewBox="0 0 1300 213"
 			width="1300"
 			xmlns="http://www.w3.org/2000/svg"
 		>
-			<title>Fundamental Glow</title>
 			<g filter="url(#filter0_f_185_1451)" opacity="0.6">
 				<path d="M647.697 68L114 -26.5L1187 -26.5L647.697 68Z" fill="#7342FE" />
 			</g>

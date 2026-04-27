@@ -3,13 +3,13 @@ import { memo } from "react";
 const EventGlow = () => {
 	return (
 		<svg
+			aria-hidden="true"
 			fill="none"
 			height="221"
 			viewBox="0 0 1300 221"
 			width="1300"
 			xmlns="http://www.w3.org/2000/svg"
 		>
-			<title>Event Glow</title>
 			<g filter="url(#filter0_f_1684_2335)" opacity="0.6">
 				<path d="M647.697 76L114 -18.5L1187 -18.5L647.697 76Z" fill="#7342FE" />
 			</g>
