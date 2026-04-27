@@ -162,6 +162,25 @@
 
 	--color-background-default: var(--background-default);
 
+	/* Semantic aliases — abstract tokens used in components that
+	   would otherwise resolve to nothing and inherit currentColor. */
+	--color-content-strong: var(--content-slate-strong);
+	--color-content-soft: var(--content-slate-soft);
+	--color-content-primary: var(--content-slate-strong);
+	--color-content-secondary: var(--content-slate-medium);
+	--color-content-white: #ffffff;
+
+	--color-surface-soft: var(--surface-slate-soft);
+	--color-surface-m-soft: var(--surface-slate-soft);
+	--color-surface-x-soft-hex: var(--surface-slate-light);
+	--color-surface-base-subtle: var(--surface-slate-light);
+	--color-surface-black: #000000;
+	--color-surface-brand-pink: var(--brand-secondary);
+
+	--color-bdr-light: var(--border-slate-light);
+	--color-bdr-soft: var(--border-slate-soft);
+	--color-br-light-soft: var(--border-slate-light);
+
 	/* Shadcn Variable Mapping */
 	--color-background: var(--background);
 	--color-foreground: var(--foreground);
