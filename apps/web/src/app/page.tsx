@@ -1,5 +1,4 @@
 import CommunitySection from "@/components/blocks/community";
-import VideoCoursesSection from "@/components/blocks/courses";
 import UpcomingEventSection from "@/components/blocks/events";
 import LightchainFundamentals from "@/components/blocks/fundamentals";
 import GetStartedSection from "@/components/blocks/get-started";

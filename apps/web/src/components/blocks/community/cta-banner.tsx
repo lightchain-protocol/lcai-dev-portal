@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Icon } from "@/components/shared/icon";
 import { Button } from "@/components/ui/button";
 
@@ -5,7 +6,12 @@ export default function CtaBanner() {
 	return (
 		<div className="relative mx-auto flex min-h-103.75 max-w-250 flex-col items-center justify-center overflow-hidden rounded-3xl bg-surface-slate-medium px-4 pt-8 pb-12 text-center">
 			<div className="absolute top-0 left-0">
-				<img src="/images/glow-effects.png" />
+				<Image
+					alt=""
+					height={830}
+					src="/images/glow-effects.png"
+					width={2000}
+				/>
 			</div>
 			<div className="relative z-30 mx-auto flex h-23.5 w-17.75 justify-center">
 				<Icon name="icon-lightning" size={94} />
